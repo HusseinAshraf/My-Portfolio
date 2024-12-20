@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { MENULINKS } from '../../assets/constants';
 import LIghtModeBtn from '../ui/LIghtModeBtn';
+
 const variants = {
   open: {
     transition: {
@@ -15,6 +16,7 @@ const variants = {
     },
   },
 };
+
 const itemVariants = {
   open: {
     y: 0,
@@ -25,6 +27,7 @@ const itemVariants = {
     opacity: 0,
   },
 };
+
 function MenuLinks({ setOpen }) {
   return (
     <motion.div
@@ -36,11 +39,11 @@ function MenuLinks({ setOpen }) {
           href={item.href}
           key={index}
           variants={itemVariants}
-          whileHover={{ scale: 1.3, color: '#7309E2' }}
+          whileHover={{ scale: 1.3, color: '#FFD700' }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setOpen((prev) => !prev)}
         >
-          <span className='text-[#7309E2]'>&lt;</span>{item.label}<span className='text-[#7309E2]'>/&gt;</span>
+          <span className="text-[#FFD700]">&lt;</span>{item.label}<span className="text-[#FFD700]">/&gt;</span>
         </motion.a>
       ))}
       <LIghtModeBtn />

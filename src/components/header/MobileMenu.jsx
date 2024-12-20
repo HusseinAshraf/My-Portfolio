@@ -37,13 +37,13 @@ function MobileMenu() {
 
   return (
     <motion.div
-      className="sidebar top-[25px] flex w-[200px] flex-col items-center justify-center bg-stone-950/30 lg:hidden "
+      className="sidebar top-[25px] flex w-[200px] flex-col items-center justify-center bg-gradient-to-b from-gray-800 via-gray-700 to-gray-900 text-white shadow-lg lg:hidden"
       initial="closed"
       animate={open ? 'open' : 'closed'}
       ref={menuRef}
     >
       <motion.div
-        className="bg fixed bottom-0 right-0 top-[-14px] z-50 w-[200px] bg-stone-950/30 filter backdrop-blur-lg"
+        className="bg fixed bottom-0 right-0 top-[-14px] z-50 w-[200px] bg-opacity-70 backdrop-blur-xl"
         variants={variants}
       >
         <MenuLinks setOpen={setOpen} />

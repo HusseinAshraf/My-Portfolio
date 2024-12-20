@@ -43,7 +43,12 @@
 
 .hero-image {
   opacity: 0;
-  animation: clipReveal 0.5s ease-in-out forwards; /* جعل الصورة تظهر مع تأثير الكشف */
-  animation-delay: 1.2s; /* تأخير ظهور الصورة بعد النصوص */
-  clip-path: inset(50% 0 50%); /* التأثير المبدئي */
+  animation: clipReveal 0.5s ease-in-out forwards;
+  animation-delay: 1.2s;
+  clip-path: inset(50% 0 50%);
+}
+
+.hero-image img {
+  transition: transform 0.3s ease-in-out;
+  border-radius: 12px;
 }

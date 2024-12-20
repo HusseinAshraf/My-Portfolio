@@ -6,7 +6,8 @@ function ToggleButton({ setOpen }) {
     <button
       onClick={() => setOpen((prev) => !prev)}
       className="fixed right-[20px] top-[12px] z-50 h-[50px] w-[50px] cursor-pointer rounded-full border-none bg-transparent"
-    aria-label='side nav menu button'>
+      aria-label="side nav menu button"
+    >
       <svg width="23" height="23" viewBox="0 0 23 23">
         <motion.path
           strokeWidth="3"

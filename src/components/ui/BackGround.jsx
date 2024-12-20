@@ -37,17 +37,17 @@ function BackGround() {
   return (
     <div className="pointer-events-none fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center overflow-hidden opacity-60 blur-[100px] filter">
       <motion.div
-        className="absolute h-[280px] w-[380px] rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+        className="absolute h-[280px] w-[380px] rounded-full bg-gradient-to-r from-[#7309E2] to-[#4C00D4]"
         variants={circleVariants}
         animate="animate01"
       ></motion.div>
       <motion.div
-        className="absolute h-[300px] w-[400px] rounded-full bg-gradient-to-r from-green-500 to-yellow-500"
+        className="absolute h-[300px] w-[400px] rounded-full bg-gradient-to-r from-[#2D4B88] to-[#7309E2]"
         variants={circleVariants}
         animate="animate02"
       ></motion.div>
       <motion.div
-        className="absolute h-[320px] w-[420px] rounded-full bg-gradient-to-r from-red-500 to-pink-500"
+        className="absolute h-[320px] w-[420px] rounded-full bg-gradient-to-r from-[#3D92C1] to-[#7309E2]"
         variants={circleVariants}
         animate="animate03"
       ></motion.div>
