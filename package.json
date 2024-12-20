@@ -16,10 +16,10 @@
     "@emailjs/browser": "^4.4.1",
     "@remixicon/react": "^4.5.0",
     "flowbite": "^2.5.2",
-    "framer-motion": "^11.11.11",
     "lottie-react": "^2.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-intersection-observer": "^9.14.0",
     "sweetalert2": "^11.14.5",
     "sweetalert2-react-content": "^5.0.7"
   },

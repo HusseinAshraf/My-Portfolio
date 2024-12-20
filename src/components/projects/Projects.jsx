@@ -13,7 +13,7 @@ function Projects() {
           <RiGithubFill size={18} /> GitHub Repos
         </ProjectButton>
       </div>
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 pt-9">
         {PROJECTS.map((item, index) => (
           <ProjectCard item={item} key={index} index={index} />
         ))}

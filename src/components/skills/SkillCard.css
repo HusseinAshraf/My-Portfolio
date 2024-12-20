@@ -12,12 +12,10 @@
 .skill-card {
   opacity: 0;
   transform: translateY(150px); /* تأكد من أن العنصر يبدأ من الأسفل */
-}
-
-.skill-card.animate {
   animation: slideFromBottom 0.4s ease-in-out forwards;
 }
 
+/* تحديد التأخير الخاص بكل عنصر */
 .skill-card:nth-child(1) {
   animation-delay: 0.1s;
 }
@@ -56,4 +54,8 @@
 
 .skill-card:nth-child(10) {
   animation-delay: 1s;
+}
+
+.skill-card:nth-child(11) {
+  animation-delay: 1.1s;
 }

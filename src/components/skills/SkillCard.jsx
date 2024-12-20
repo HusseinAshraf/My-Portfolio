@@ -1,35 +1,16 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from 'react';
-import './SkillCard.css';
+import { useInView } from 'react-intersection-observer';
 
 function SkillCard({ image, children }) {
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, []);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
 
   return (
     <div
-      ref={cardRef}
-      className="skill-card flex w-max items-center gap-1 rounded-lg border border-white object-cover px-2 py-1 shadow-sm shadow-purple-500"
+      ref={ref}
+      className={`skill-card flex w-max items-center gap-10 rounded-lg border border-white object-cover px-2 py-1 shadow-sm shadow-purple-500 transition-all duration-700 ease-in-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[150px]'}`}
     >
       <div className="h-10 w-12">
         <img
