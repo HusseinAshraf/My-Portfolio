@@ -6,7 +6,6 @@ import SectionHeading from '../ui/SectionHeading';
 import contact from '../../assets/contact_animation/Contact.json';
 import { RiLinkedinBoxFill, RiMailSendFill, RiPhoneFill, RiWhatsappFill } from '@remixicon/react';
 import Button from '../ui/Button';
-import { useInView } from 'react-intersection-observer';
 
 function Contact() {
   const formRef = useRef();
@@ -21,10 +20,27 @@ function Contact() {
 
   const handleSendEmail = (e) => {
     e.preventDefault();
+
+    // Log form values
+    console.log("Name:", nameRef.current.value);
+    console.log("Email:", emailRef.current.value);
+    console.log("Message:", messageRef.current.value);
+
+    // Validate if all fields are filled
+    if (!nameRef.current.value || !emailRef.current.value || !messageRef.current.value) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please fill all fields before sending the message.',
+        icon: 'error',
+      });
+      return;
+    }
+
+    // Send the email
     emailjs
-      .sendForm('service_ltsehel', 'template_1v0990b', formRef.current, {
-        publicKey: 'Rd6u_wdMbKC5H5EuS',
-        user_email: 'husseinashraf7414@gmail.com', // Your email
+      .sendForm('service_8qk8go4', 'template_9ak1uhu', formRef.current, {
+        publicKey: 'XTyipkAa6MqkpnVAe',
+        user_email: 'husseinashraf7414@gmail.com',
       })
       .then(
         () => {
@@ -38,20 +54,14 @@ function Contact() {
           messageRef.current.value = '';
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          Swal.fire({
+            title: 'Error!',
+            text: `Message failed to send: ${error.text}`,
+            icon: 'error',
+          });
         }
       );
   };
-
-  const { ref: aboutRef, inView: aboutInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
-
-  const { ref: formRefInView, inView: formInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
 
   return (
     <section className="contact-section relative z-20 mt-5 w-full overflow-hidden bg-stone-950/30 px-6 pb-3 pt-9 backdrop-blur-lg" id="contact">
@@ -60,7 +70,7 @@ function Contact() {
       <div className="mx-auto mb-16 max-w-7xl">
         <div className="flex flex-col items-center justify-between md:flex-row">
           {/* Contact Info Section */}
-          <div ref={aboutRef} className={`mb-8 ml-1 text-center md:mb-0 md:w-1/2 md:text-start transition-all duration-700 ease-in-out ${aboutInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-150px]'}`}>
+          <div className="mb-8 ml-1 text-center md:mb-0 md:w-1/2 md:text-start">
             <h2 className="mb-3 text-3xl font-bold text-purple-500">Get in Touch</h2>
             <p className="mb-4">
               I'm always open to new opportunities and collaboration. Feel free to reach out!
@@ -84,8 +94,8 @@ function Contact() {
 
           {/* Form Section */}
           <form
-            ref={formRefInView}
-            className={`w-full rounded-lg border border-purple-500 p-6 shadow-sm shadow-purple-500 md:w-1/2 transition-all duration-700 ease-in-out ${formInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[150px]'}`}
+            ref={formRef}
+            className="w-full rounded-lg border border-purple-500 p-6 shadow-sm shadow-purple-500 md:w-1/2"
             onSubmit={handleSendEmail}
           >
             <h1 className="text-center md:text-start mb-7 text-4xl font-bold">Contact Me</h1>
