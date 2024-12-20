@@ -1,0 +1,1 @@
+import{j as e}from"./index-B9rqMR2d.js";function l(){const t=new Date().getFullYear();return e.jsx("footer",{className:"relative z-20 w-full bg-[#7508E8] py-5",children:e.jsxs("div",{className:" text-white flex w-full items-center justify-center font-semibold sm:text-sm md:text-xl",children:["© ",t," Hussein. A, All rights reserved."]})})}export{l as default};
