@@ -28,6 +28,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/freshCart-ecommerce.git',
     liveDemoLink: 'https://husseinashraf.github.io/freshCart-ecommerce/#/login',
     tech: ['React', 'JavaScript', 'Context', 'Bootstrap'],
+    filterId:['React' , 'Bootstrap']
   },
   {
     name: 'Admin Dashboard',
@@ -36,6 +37,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/Statck-Dashboard.git',
     liveDemoLink: 'https://husseinashraf.github.io/Statck-Dashboard/',
     tech: ['React', 'Vite', 'JavaScript', 'Material UI'],
+    filterId:['React' , 'Material UI']
   },
   {
     name: 'Foodie',
@@ -45,6 +47,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/Foodie.git',
     liveDemoLink: 'https://husseinashraf.github.io/Foodie/',
     tech: ['React', 'Vite', 'JavaScript', 'Tailwind'],
+    filterId:['React','Tailwind']
   },
   {
     name: 'Yummy (API-based project)',
@@ -54,6 +57,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/yummy.git',
     liveDemoLink: 'https://husseinashraf.github.io/yummy/',
     tech: ['Html', 'Css', 'API', 'JavaScript', 'Bootstrap'],
+    filterId:['JS / API' , 'Bootstrap']
   },
   {
     name: 'Weather API',
@@ -63,6 +67,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/weather.git',
     liveDemoLink: 'https://husseinashraf.github.io/weather/',
     tech: ['Html', 'Css', 'JavaScript', 'Api', 'Bootstrap'],
+    filterId:['JS / API' , 'Bootstrap']
   },
   {
     name: 'Rayal Park',
@@ -71,6 +76,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/Rayal-Park.git',
     liveDemoLink: 'https://husseinashraf.github.io/Rayal-Park/',
     tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
+    filterId:['JS / API' , 'Bootstrap']
   },
   {
     name: 'Smart Login',
@@ -79,6 +85,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/Smart-login.git',
     liveDemoLink: 'https://husseinashraf.github.io/Smart-login/',
     tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
+    filterId:['JS / API' , 'Bootstrap']
   },
   {
     name: 'Bookmark CRUD',
@@ -88,6 +95,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/Bookmark-crud.git',
     liveDemoLink: 'https://husseinashraf.github.io/Bookmark-crud/',
     tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
+    filterId:['JS / API' , 'Bootstrap']
   },
   {
     name: 'CRUD',
@@ -97,6 +105,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/Crud.git',
     liveDemoLink: 'https://husseinashraf.github.io/Crud/',
     tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
+    filterId:['JS / API' , 'Bootstrap']
   },
   {
     name: `Daily Reminders"الاذكار اليومية"`,
@@ -105,6 +114,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/Quotes-Quiz.git',
     liveDemoLink: 'https://husseinashraf.github.io/Quotes-Quiz/',
     tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
+    filterId:['JS / API' , 'Bootstrap']
   },
   {
     name: `Daniels`,
@@ -113,6 +123,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/Daniels.git',
     liveDemoLink: 'https://husseinashraf.github.io/Daniels/',
     tech: ['Html', 'Css', 'Bootstrap'],
+    filterId:['Bootstrap']
   },
   {
     name: `DevFolio`,
@@ -121,6 +132,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/DevFolio.git',
     liveDemoLink: 'https://husseinashraf.github.io/DevFolio/',
     tech: ['Html', 'Css', 'Bootstrap'],
+    filterId:['Bootstrap']
   },
   {
     name: `TIC-TAC-TOE`,
@@ -130,6 +142,7 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/TIC-TAC-TOE.git',
     liveDemoLink: 'https://husseinashraf.github.io/TIC-TAC-TOE/',
     tech: ['Html', 'Css', 'Bootstrap', 'JavaScript'],
+    filterId:['JS / API']
   },
   {
     name: `Stop-Watch`,
@@ -139,5 +152,6 @@ export const PROJECTS = [
     gitHubLink: 'https://github.com/HusseinAshraf/stop-Watch.git',
     liveDemoLink: 'https://husseinashraf.github.io/stop-Watch/',
     tech: ['Html', 'Css', 'Bootstrap', 'JavaScript '],
+    filterId:['JS / API']
   },
 ];
