@@ -5,7 +5,7 @@ import './Hero.css';
 
 function Hero() {
   return (
-    <section>
+    <section >
       <div className="relative flex min-h-screen flex-col-reverse items-center justify-center md:flex-row">
         <div className="w-full p-5 md:w-1/2 md:p-6">
           <p className="hero-text hero-text-delay-1 mb-4 mt-3 text-center text-xl md:mb-6 md:mt-14 md:text-start md:text-2xl lg:text-3xl">
