@@ -59,6 +59,15 @@ function NavBar() {
           ref={menuRef}
           className="absolute top-0 left-0 z-50 flex h-screen w-screen flex-col items-center justify-center bg-gradient-to-b from-gray-800 via-gray-700 to-gray-900 text-white shadow-lg lg:hidden"
         >
+          {/* زر الإغلاق */}
+          <button
+            className="absolute top-4 right-4 text-white"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <span className="text-2xl">&times;</span>
+          </button>
+
           {MENULINKS.map((link, index) => (
             <a
               href={link.href}

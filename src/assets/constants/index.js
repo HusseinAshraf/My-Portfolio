@@ -35,7 +35,7 @@ export const PROJECTS = [
     image: project2,
     gitHubLink: 'https://github.com/HusseinAshraf/Statck-Dashboard.git',
     liveDemoLink: 'https://husseinashraf.github.io/Statck-Dashboard/',
-    tech: ['React', 'Vite', 'JavaScript', 'Formik', 'Material UI'],
+    tech: ['React', 'Vite', 'JavaScript', 'Material UI'],
   },
   {
     name: 'Foodie',
@@ -44,7 +44,7 @@ export const PROJECTS = [
     image: project3,
     gitHubLink: 'https://github.com/HusseinAshraf/Foodie.git',
     liveDemoLink: 'https://husseinashraf.github.io/Foodie/',
-    tech: ['React', 'Vite', 'JavaScript', 'Tailwind', 'Formik'],
+    tech: ['React', 'Vite', 'JavaScript', 'Tailwind'],
   },
   {
     name: 'Yummy (API-based project)',
@@ -53,7 +53,7 @@ export const PROJECTS = [
     image: project4,
     gitHubLink: 'https://github.com/HusseinAshraf/yummy.git',
     liveDemoLink: 'https://husseinashraf.github.io/yummy/',
-    tech: ['Html 5', 'Css3', 'JavaScript', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'API', 'JavaScript', 'Bootstrap'],
   },
   {
     name: 'Weather API',
@@ -62,7 +62,7 @@ export const PROJECTS = [
     image: project5,
     gitHubLink: 'https://github.com/HusseinAshraf/weather.git',
     liveDemoLink: 'https://husseinashraf.github.io/weather/',
-    tech: ['Html 5', 'Css3', 'JavaScript', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'JavaScript', 'Api', 'Bootstrap'],
   },
   {
     name: 'Rayal Park',
@@ -70,7 +70,7 @@ export const PROJECTS = [
     image: project6,
     gitHubLink: 'https://github.com/HusseinAshraf/Rayal-Park.git',
     liveDemoLink: 'https://husseinashraf.github.io/Rayal-Park/',
-    tech: ['Html 5', 'Css3', 'JavaScript', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
   },
   {
     name: 'Smart Login',
@@ -78,7 +78,7 @@ export const PROJECTS = [
     image: project7,
     gitHubLink: 'https://github.com/HusseinAshraf/Smart-login.git',
     liveDemoLink: 'https://husseinashraf.github.io/Smart-login/',
-    tech: ['Html 5', 'Css3', 'JavaScript', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
   },
   {
     name: 'Bookmark CRUD',
@@ -87,7 +87,7 @@ export const PROJECTS = [
     image: project8,
     gitHubLink: 'https://github.com/HusseinAshraf/Bookmark-crud.git',
     liveDemoLink: 'https://husseinashraf.github.io/Bookmark-crud/',
-    tech: ['Html 5', 'Css3', 'JavaScript', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
   },
   {
     name: 'CRUD',
@@ -96,7 +96,7 @@ export const PROJECTS = [
     image: project9,
     gitHubLink: 'https://github.com/HusseinAshraf/Crud.git',
     liveDemoLink: 'https://husseinashraf.github.io/Crud/',
-    tech: ['Html 5', 'Css3', 'JavaScript', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
   },
   {
     name: `Daily Reminders"الاذكار اليومية"`,
@@ -104,7 +104,7 @@ export const PROJECTS = [
     image: project10,
     gitHubLink: 'https://github.com/HusseinAshraf/Quotes-Quiz.git',
     liveDemoLink: 'https://husseinashraf.github.io/Quotes-Quiz/',
-    tech: ['Html 5', 'Css3', 'JavaScript', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'JavaScript', 'Bootstrap'],
   },
   {
     name: `Daniels`,
@@ -112,7 +112,7 @@ export const PROJECTS = [
     image: project11,
     gitHubLink: 'https://github.com/HusseinAshraf/Daniels.git',
     liveDemoLink: 'https://husseinashraf.github.io/Daniels/',
-    tech: ['Html 5', 'Css3', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'Bootstrap'],
   },
   {
     name: `DevFolio`,
@@ -120,7 +120,7 @@ export const PROJECTS = [
     image: project12,
     gitHubLink: 'https://github.com/HusseinAshraf/DevFolio.git',
     liveDemoLink: 'https://husseinashraf.github.io/DevFolio/',
-    tech: ['Html 5', 'Css3', 'Bootstrap5'],
+    tech: ['Html', 'Css', 'Bootstrap'],
   },
   {
     name: `TIC-TAC-TOE`,
@@ -129,7 +129,7 @@ export const PROJECTS = [
     image: project13,
     gitHubLink: 'https://github.com/HusseinAshraf/TIC-TAC-TOE.git',
     liveDemoLink: 'https://husseinashraf.github.io/TIC-TAC-TOE/',
-    tech: ['Html 5', 'Css3', 'Bootstrap5', 'JavaScript '],
+    tech: ['Html', 'Css', 'Bootstrap', 'JavaScript'],
   },
   {
     name: `Stop-Watch`,
@@ -138,6 +138,6 @@ export const PROJECTS = [
     image: project14,
     gitHubLink: 'https://github.com/HusseinAshraf/stop-Watch.git',
     liveDemoLink: 'https://husseinashraf.github.io/stop-Watch/',
-    tech: ['Html 5', 'Css3', 'Bootstrap5', 'JavaScript '],
+    tech: ['Html', 'Css', 'Bootstrap', 'JavaScript '],
   },
 ];

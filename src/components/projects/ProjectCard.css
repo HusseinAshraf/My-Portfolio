@@ -18,7 +18,7 @@
   animation: projectCardAnimation 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Delay animations for each project card based on its order */
+/* إضافة التأخير للمشاريع بناءً على الترتيب */
 .project-card:nth-child(1) {
   animation-delay: 0.1s;
 }

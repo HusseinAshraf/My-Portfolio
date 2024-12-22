@@ -10,9 +10,9 @@ function SkillCard({ image, children }) {
   return (
     <div
       ref={ref}
-      className={`skill-card flex w-max items-center gap-10 rounded-lg border border-white object-cover px-2 py-1 shadow-sm shadow-purple-500 transition-all duration-700 ease-in-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[150px]'}`}
+      className={`skill-card flex items-center gap-4 rounded-lg border border-white object-cover p-4 shadow-sm shadow-purple-500 transition-all duration-700 ease-in-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[150px]'}`}
     >
-      <div className="h-10 w-12">
+      <div className="h-12 w-12">
         <img
           src={image}
           alt="Skill image"
@@ -20,7 +20,7 @@ function SkillCard({ image, children }) {
           loading="lazy"
         />
       </div>
-      <span className="font-semibold">{children}</span>
+      <span className="font-semibold text-lg">{children}</span>
     </div>
   );
 }
