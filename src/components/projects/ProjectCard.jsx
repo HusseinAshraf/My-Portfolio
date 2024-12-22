@@ -33,7 +33,7 @@ function ProjectCard({ item, index }) {
   return (
     <div
       ref={cardRef}
-      className={`w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-5 project-card ${isVisible ? 'animate' : ''}`}
+      className={`w-full max-w-sm  bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-5 project-card ${isVisible ? 'animate' : ''}`}
       style={{ animationDelay: `${index * 0.2}s` }} // Add delay based on index
     >
       {/* Ensure the image is within the div and covers only its container */}

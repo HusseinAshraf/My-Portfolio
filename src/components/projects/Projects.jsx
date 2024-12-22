@@ -13,10 +13,10 @@ function Projects() {
     : PROJECTS.filter((project) => project.filterId.includes(filter));
 
   return (
-    <section className="projects-section mx-auto overflow-hidden px-6 py-9 flex flex-col" id="projects">
+    <section className="projects-section mx-auto overflow-hidden px-6 py-9 ml-4 flex flex-col" id="projects">
       <SectionHeading>Projects</SectionHeading>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-6">
+      <div className="flex flex-wrap justify-center  gap-4 mb-6">
         {filterOptions.map((option) => (
           <button
             key={option}
@@ -30,9 +30,9 @@ function Projects() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 pt-9">
+      <div className="grid grid-cols-1  gap-6 sm:grid-cols-2 md:grid-cols-3 pt-9">
         {filteredProjects.map((item, index) => (
-          <ProjectCard item={item} key={index} index={index} />
+          <ProjectCard  item={item} key={index} index={index} />
         ))}
       </div>
     </section>

@@ -64,11 +64,11 @@ function Contact() {
   };
 
   return (
-    <section className="contact-section relative z-20 mt-5 w-full overflow-hidden bg-stone-950/30 px-6 pb-3 pt-9 backdrop-blur-lg" id="contact">
+    <section className="contact-section relative px-16 pb-3 pt-9  z-20 mt-5 w-full overflow-hidden bg-stone-950/30  backdrop-blur-lg" id="contact">
       <SectionHeading>Contact me</SectionHeading>
 
-      <div className="mx-auto mb-16 max-w-7xl">
-        <div className="flex flex-col items-center justify-between md:flex-row">
+      <div className="mx-auto mb-16 max-w-7xl ">
+        <div className="flex flex-col  items-center justify-between md:flex-row">
           {/* Contact Info Section */}
           <div className="mb-8 ml-1 text-center md:mb-0 md:w-1/2 md:text-start">
             <h2 className="mb-3 text-3xl font-bold text-purple-500">Get in Touch</h2>

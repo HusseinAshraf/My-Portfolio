@@ -22,7 +22,7 @@ function About() {
   });
 
   return (
-    <section className="about-section mx-auto my-9 px-4 pt-7 md:min-h-screen md:px-6" id="about">
+    <section className="about-section mx-auto ml-4 my-9 px-4  pt-7 md:min-h-screen md:px-6" id="about">
       <div className="flex flex-col gap-8 md:flex-row md:gap-12">
         {/* About Me Section */}
         <div ref={aboutMeRef} className="about-me md:w-1/2">
