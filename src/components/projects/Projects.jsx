@@ -13,7 +13,7 @@ function Projects() {
     : PROJECTS.filter((project) => project.filterId.includes(filter));
 
   return (
-    <section className="projects-section mx-auto overflow-hidden px-6 py-9 ml-4 flex flex-col" id="projects">
+    <section className="projects-section mx-auto overflow-hidden px-6 py-9 ml-5 flex flex-col" id="projects">
       <SectionHeading>Projects</SectionHeading>
 
       <div className="flex flex-wrap justify-center  gap-4 mb-6">

@@ -13,7 +13,7 @@ import SkillCard from './SkillCard';
 
 function Skills() {
   return (
-    <section className="skills-section ml-4 my-8 px-4 md:px-6" id="skills">
+    <section className="skills-section m-7 my-8 px-4 md:px-6" id="skills">
       <SectionHeading>My Skills</SectionHeading>
       <div className="mt-12 grid grid-cols-2  sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-center">
         <SkillCard image={Html}>Html</SkillCard>

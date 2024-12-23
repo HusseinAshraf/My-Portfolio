@@ -6,7 +6,7 @@ import './Hero.css';
 function Hero() {
   return (
     <section >
-      <div className="relative ml-4 flex p-4 min-h-screen flex-col-reverse items-center justify-center md:flex-row">
+      <div className="relative m-7 flex p-4 min-h-screen flex-col-reverse items-center justify-center md:flex-row">
         <div className="w-full  md:w-1/2 md:p-6">
           <p className="hero-text hero-text-delay-1 mb-4 mt-3 text-center text-xl md:mb-6 md:mt-14 md:text-start md:text-2xl lg:text-3xl">
             Hey there! 🖐️ My name is
@@ -34,9 +34,7 @@ function Hero() {
           <img
             src={myPhoto}
             alt="My photo"
-            width={500}
-            height={500}
-            className="mt-12 h-[300px] w-[300px] rounded-3xl md:mt-0 md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px]"
+            className="mt-12 h-[400px] w -[350px] rounded-3xl md:mt-0 md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[350px]"
           />
         </div>
       </div>
