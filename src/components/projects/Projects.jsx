@@ -22,7 +22,7 @@ function Projects() {
             key={option}
             onClick={() => setFilter(option)}
             className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform 
-              ${filter === option ? 'bg-purple-600 text-white scale-105 shadow-lg' : 'bg-gray-200 text-black hover:bg-purple-500 hover:text-white'} 
+              ${filter === option ? 'bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 text-white scale-105 shadow-lg' : 'bg-gray-200 text-black hover:bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 hover:text-white'} 
               w-auto`}
           >
             {option}
