@@ -6,7 +6,7 @@ import { useState } from 'react';
 function Projects() {
   const [filter, setFilter] = useState('ALL');
 
-  const filterOptions = ['ALL', 'React', 'JS / API', 'Bootstrap', 'Material UI', 'Tailwind'];
+  const filterOptions = ['ALL', 'React', 'JS / API', 'Bootstrap', 'Material UI', 'Tailwind' , 'Html / Css'];
 
   const filteredProjects = filter === 'ALL'
     ? PROJECTS
