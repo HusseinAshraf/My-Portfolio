@@ -119,7 +119,7 @@ export const PROJECTS = [
       'Exam Mentor is a web application that helps students prepare for exams by providing quizzes and study materials',
     image: project17,
     gitHubLink: 'https://github.com/HusseinAshraf/quiz-app-SNS.git',
-    liveDemoLink: 'https://github.com/HusseinAshraf/quiz-app-SNS.git',
+    liveDemoLink: 'https://husseinashraf.github.io/quiz-app-SNS/',
     tech: ['Html', 'Css', 'JavaScript', 'Api', 'Bootstrap'],
     filterId: ['JS / API'],
   },
