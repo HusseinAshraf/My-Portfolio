@@ -32,7 +32,7 @@ const SocialLinks = () => {
       icon: <BsFillPersonLinesFill size={30} />,
       href: "/public/resume/my-resume.pdf",
       style: "rounded-br-md",
-      download: true,
+      download: "Hussein-Ashraf-Resume.pdf",
     },
   ];
 
