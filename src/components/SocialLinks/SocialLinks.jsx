@@ -30,7 +30,7 @@ const SocialLinks = () => {
       id: 4,
       label: "Resume",
       icon: <BsFillPersonLinesFill size={30} />,
-      href: "/src/assets/resume/my-resume.pdf", 
+      href: "/public/resume/my-resume.pdf", 
       style: "rounded-br-md",
       download: true,
     },
