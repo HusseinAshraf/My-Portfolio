@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { FaGithub, FaLinkedin, FaUsers, FaFacebook } from "react-icons/fa"; // إضافة FaFacebook
+import { FaGithub, FaLinkedin, FaUsers, FaFacebook } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import my_resume from '../../public/resume/my-resume.pdf';
 
 const SocialLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,22 +24,20 @@ const SocialLinks = () => {
       id: 3,
       label: "Mail",
       icon: <HiOutlineMail size={30} />,
-      href: "mailto:husseinashraf7414@gmail.com", // رابط mailto
+      href: "mailto:husseinashraf7414@gmail.com",
     },
     {
       id: 4,
       label: "Resume",
       icon: <BsFillPersonLinesFill size={30} />,
-      href: { my_resume }, 
+      href: "/public/resume/my-resume.pdf",
       style: "rounded-br-md",
       download: true,
     },
-  
   ];
 
   return (
     <div className="fixed top-[35%] left-0 lg:flex flex-col">
-      {/* Social Links for large screens */}
       <div className="hidden lg:flex flex-col">
         <ul>
           {links.map(({ id, label, icon, href, style, download }) => (
@@ -62,7 +59,6 @@ const SocialLinks = () => {
         </ul>
       </div>
 
-      {/* Toggle Button for small screens (styled as 'Social') */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="lg:hidden fixed top-[35%] left-0 p-3 text-3xl text-white z-50 hover:scale-110 transition-all duration-300"
@@ -72,11 +68,10 @@ const SocialLinks = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         ) : (
-          <FaUsers size={30} /> 
+          <FaUsers size={30} />
         )}
       </button>
 
-      {/* Social Links for small screens */}
       {isOpen && (
         <div className="lg:hidden flex flex-col items-center mt-12">
           <ul>
