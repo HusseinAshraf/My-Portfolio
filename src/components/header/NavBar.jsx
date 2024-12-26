@@ -72,7 +72,7 @@ function NavBar() {
             <a
               href={link.href}
               key={index}
-              className="mb-4 text-2xl font-semibold transition-all duration-300 hover:text-[#FFD700]"
+              className="mb-4 ztext-2xl font-semibold transition-all duration-300 hover:text-[#FFD700]"
               onClick={() => setMenuOpen(false)}
             >
               <span className="text-[#FFD700]">&lt;</span>{link.label}<span className="text-[#FFD700]">/&gt;</span>
