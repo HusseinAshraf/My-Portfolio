@@ -85,7 +85,7 @@ function About() {
         ref={buttonRef}
         className={`mt-8 flex items-center justify-center justify-self-center md:justify-self-end transition-all duration-500 ease-in-out ${buttonInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[100px]'}
         `}
-        href="/public/resume/my-resume.pdf"
+        href="/resume/my-resume.pdf"
         download="Hussein-Ashraf-Resume.pdf" 
         rel="noopener noreferrer"
         target="_blank"
