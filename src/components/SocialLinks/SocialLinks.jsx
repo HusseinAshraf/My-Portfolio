@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaGithub, FaLinkedin, FaUsers, FaFacebook } from "react-icons/fa"; // إضافة FaFacebook
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import my_resume from '../../public/resume/my-resume.pdf';
 
 const SocialLinks = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const SocialLinks = () => {
       id: 4,
       label: "Resume",
       icon: <BsFillPersonLinesFill size={30} />,
-      href: "/public/resume/my-resume.pdf", 
+      href: { my_resume }, 
       style: "rounded-br-md",
       download: true,
     },

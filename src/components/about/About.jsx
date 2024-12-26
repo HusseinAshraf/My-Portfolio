@@ -1,7 +1,7 @@
 import { RiDownload2Fill } from '@remixicon/react';
 import Button from '../ui/Button';
 import SectionHeading from '../ui/SectionHeading';
-import my_resume from '/public/resume/my-resume.pdf';
+import my_resume from '../../../public/resume/my-resume.pdf';
 import { useInView } from 'react-intersection-observer';
 import './About.css';
 
