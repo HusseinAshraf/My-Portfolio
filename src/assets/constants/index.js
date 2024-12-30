@@ -15,6 +15,7 @@ import project14 from '../images/stopWatch.PNG';
 import project15 from '../images/Meallify.PNG';
 import project16 from '../images/Fokir.PNG';
 import project17 from '../images/ExamMentor.PNG';
+import project18 from '../images/DataList.PNG';
 
 export const MENULINKS = [
   { href: '#about', label: 'About' },
@@ -56,7 +57,7 @@ export const PROJECTS = [
   {
     name: 'Data List',
     description: 'A web application for displaying data in a list format',
-    image: project3,
+    image: project18,
     gitHubLink: 'https://github.com/HusseinAshraf/DataList.git',
     liveDemoLink: 'https://data-list-jade.vercel.app/',
     tech: ['React', 'Tailwind', 'JavaScript', 'Axios', 'i18next'],
