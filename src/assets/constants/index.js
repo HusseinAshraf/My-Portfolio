@@ -53,6 +53,15 @@ export const PROJECTS = [
     tech: ['React', 'Tailwind', 'JavaScript', 'Context'],
     filterId: ['React', 'Tailwind'],
   },
+  {
+    name: 'Data List',
+    description: 'A web application for displaying data in a list format',
+    image: project3,
+    gitHubLink: 'https://github.com/HusseinAshraf/DataList.git',
+    liveDemoLink: 'https://data-list-jade.vercel.app/',
+    tech: ['React', 'Tailwind', 'JavaScript', 'Axios', 'i18next'],
+    filterId: ['React', 'Tailwind'],
+  },
 
   // Js/Api
 
