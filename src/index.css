@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     font-family: 'Inter', sans-serif;
@@ -35,4 +34,34 @@ body {
 .skills,
 .contact {
   scroll-margin-top: 5rem;
+}
+
+/* CSS لضبط الاتجاه من اليمين لليسار (RTL) */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .space-x-8 {
+  margin-left: 0; /* تحويل المسافات بين العناصر */
+  margin-right: 2rem; /* ضبط المسافة الصحيحة للغة العربية */
+}
+
+.rtl .space-x-8 > * {
+  margin-left: 2rem; /* ضبط المسافات بين العناصر */
+  margin-right: 0;
+}
+
+.rtl .lg\:space-x-8 {
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+.rtl button {
+  margin-left: 0; /* ضبط الزر في الاتجاه المعاكس */
+  margin-right: 1rem;
+}
+
+.rtl .font-new-mono {
+  font-family: 'Tajawal', sans-serif; /* يمكنك إضافة خط يدعم اللغة العربية */
 }

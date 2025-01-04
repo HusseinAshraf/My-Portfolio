@@ -6,8 +6,10 @@ import SectionHeading from '../ui/SectionHeading';
 import contact from '../../assets/contact_animation/Contact.json';
 import { RiLinkedinBoxFill, RiMailSendFill, RiPhoneFill, RiWhatsappFill } from '@remixicon/react';
 import Button from '../ui/Button';
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
+  const { t, i18n } = useTranslation();
   const formRef = useRef();
   const nameRef = useRef();
   const emailRef = useRef();
@@ -65,17 +67,20 @@ function Contact() {
 
   return (
     <section className="contact-section relative px-16 pb-3 pt-9  z-20 mt-5 w-full overflow-hidden bg-stone-950/30  backdrop-blur-lg" id="contact">
-      <SectionHeading>Contact me</SectionHeading>
+      <SectionHeading>{t('Contact')}</SectionHeading>
 
       <div className="mx-auto mb-16 max-w-7xl ">
         <div className="flex flex-col  items-center justify-between md:flex-row">
           {/* Contact Info Section */}
           <div className="mb-8 ml-1 text-center md:mb-0 md:w-1/2 md:text-start">
-            <h2 className="mb-3 text-3xl font-bold text-purple-500">Get in Touch</h2>
+            <h2 className="mb-3 text-3xl font-bold text-purple-500">{t('GetInTouch')}</h2>
             <p className="mb-4">
-              I'm always open to new opportunities and collaboration. Feel free to reach out!
+              {t('TextInContact')}
             </p>
-            <div className="flex items-center justify-center space-x-4 md:justify-start">
+            <div
+              className={`flex items-center ${i18n.language === 'ar' ? 'justify-start space-x-reverse' : 'justify-end'
+                } space-x-4 md:justify-start`}
+            >
               <a href="https://www.linkedin.com/in/hussein-ashraf-1018a7203/" className="text-[#0a66c2]" target="_blank">
                 <RiLinkedinBoxFill aria-label="LinkedIn" />
               </a>
@@ -86,6 +91,7 @@ function Contact() {
                 <RiPhoneFill aria-label="Phone" />
               </a>
             </div>
+
             <Lottie
               animationData={contact}
               className="mx-auto w-[300px] md:h-[350px] md:w-[350px] lg:h-[500px] lg:w-[500px]"
@@ -98,45 +104,45 @@ function Contact() {
             className="w-full rounded-lg border border-purple-500 p-6 shadow-sm shadow-purple-500 md:w-1/2"
             onSubmit={handleSendEmail}
           >
-            <h1 className="text-center md:text-start mb-7 text-4xl font-bold">Contact Me</h1>
+            <h1 className="text-center md:text-start mb-7 text-4xl font-bold">{t("Contact")}</h1>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-medium">Name</label>
+              <label htmlFor="name" className="block text-sm font-medium">{t("Name")}</label>
               <input
                 type="text"
                 id="name"
                 name="user_name"
                 ref={nameRef}
-                placeholder="Full Name"
+                placeholder={t("FullName")}
                 required
                 className="mx-auto mt-2 block w-full rounded-md border-purple-500 p-2 text-stone-800 shadow-sm outline-none focus:border-purple-600 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium">{t("Email")}</label>
               <input
                 type="email"
                 id="email"
                 name="user_email"
                 ref={emailRef}
-                placeholder="Email"
+                placeholder={t("Email")}
                 required
                 className="mx-auto mt-2 block w-full rounded-md border-purple-500 p-2 text-stone-800 shadow-sm outline-none focus:border-purple-600 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="message" className="block text-sm font-medium">Message</label>
+              <label htmlFor="message" className="block text-sm font-medium">{t("Message")}</label>
               <textarea
                 id="message"
                 name="message"
                 ref={messageRef}
-                placeholder="Enter Your Message"
+                placeholder={t("MessagePlaceholder")}
                 required
                 className="focus:ring-opacity- mx-auto mt-2 block h-32 w-full resize-none rounded-md border-purple-500 p-2 text-stone-800 shadow-sm outline-none focus:border-purple-600 focus:ring focus:ring-purple-500"
               />
             </div>
             <div className="flex justify-center md:justify-start">
               <Button btnAnimated="primary">
-                Send Message <RiMailSendFill className="ml-3" size={20} />
+                {t("SendMessage")} <RiMailSendFill className="ml-3" size={20} />
               </Button>
             </div>
           </form>

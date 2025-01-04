@@ -18,16 +18,16 @@ import project17 from '../images/ExamMentor.PNG';
 import project18 from '../images/DataList.PNG';
 
 export const MENULINKS = [
-  { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#about', label: 'about' },
+  { href: '#skills', label: 'skills' },
+  { href: '#projects', label: 'projects' },
+  { href: '#contact', label: 'contact' },
 ];
 
 export const PROJECTS = [
   //React
   {
-    name: 'Fresh Cart',
+    name: 'Fresh_Cart',
     description: 'An e-commerce website for selling groceries',
     image: project1,
     gitHubLink: 'https://github.com/HusseinAshraf/freshCart-ecommerce.git',
@@ -36,7 +36,7 @@ export const PROJECTS = [
     filterId: ['React', 'Bootstrap'],
   },
   {
-    name: 'Admin Dashboard',
+    name: 'Admin_Dashboard',
     description: 'A dashboard for managing data',
     image: project2,
     gitHubLink: 'https://github.com/HusseinAshraf/Statck-Dashboard.git',
@@ -55,7 +55,7 @@ export const PROJECTS = [
     filterId: ['React', 'Tailwind'],
   },
   {
-    name: 'Data List',
+    name: 'Data_List',
     description: 'A web application for displaying data in a list format',
     image: project18,
     gitHubLink: 'https://github.com/HusseinAshraf/DataList.git',
@@ -67,7 +67,7 @@ export const PROJECTS = [
   // Js/Api
 
   {
-    name: 'Yummy (API-based project)',
+    name: 'Yummy_(API-based project)',
     description:
       'A web application for discovering food categories and recipes',
     image: project4,
@@ -77,7 +77,7 @@ export const PROJECTS = [
     filterId: ['JS / API', 'Bootstrap'],
   },
   {
-    name: 'Weather API',
+    name: 'Weather_API',
     description: 'A web application to get the weather of any city',
     image: project5,
     gitHubLink: 'https://github.com/HusseinAshraf/weather.git',
@@ -86,7 +86,7 @@ export const PROJECTS = [
     filterId: ['JS / API', 'Bootstrap'],
   },
   {
-    name: 'Rayal Park',
+    name: 'Rayal_Park',
     description: 'A web application for booking a hotel room',
     image: project6,
     gitHubLink: 'https://github.com/HusseinAshraf/Rayal-Park.git',
@@ -95,7 +95,7 @@ export const PROJECTS = [
     filterId: ['JS / API', 'Bootstrap'],
   },
   {
-    name: 'Smart Login',
+    name: 'Smart_Login',
     description: 'A web application that provides login functionality',
     image: project7,
     gitHubLink: 'https://github.com/HusseinAshraf/Smart-login.git',
@@ -104,7 +104,7 @@ export const PROJECTS = [
     filterId: ['JS / API', 'Bootstrap'],
   },
   {
-    name: 'Bookmark CRUD',
+    name: 'Bookmark_CRUD',
     description:
       ' A web application for creating, reading, updating, and deleting bookmarks',
     image: project8,
@@ -124,7 +124,7 @@ export const PROJECTS = [
     filterId: ['JS / API', 'Bootstrap'],
   },
   {
-    name: `Exam Mentor`,
+    name: `Exam_Mentor`,
     description:
       'Exam Mentor is a web application that helps students prepare for exams by providing quizzes and study materials',
     image: project17,
@@ -134,7 +134,7 @@ export const PROJECTS = [
     filterId: ['JS / API'],
   },
   {
-    name: `Daily Reminders"الاذكار اليومية"`,
+    name: `Daily_Reminders`,
     description: 'A web application that provides daily reminders',
     image: project10,
     gitHubLink: 'https://github.com/HusseinAshraf/Quotes-Quiz.git',
@@ -143,7 +143,7 @@ export const PROJECTS = [
     filterId: ['JS / API', 'Bootstrap'],
   },
   {
-    name: `TIC-TAC-TOE`,
+    name: `TICTAC_TOE`,
     description: 'A simple tic-tac-toe game',
     image: project13,
     gitHubLink: 'https://github.com/HusseinAshraf/TIC-TAC-TOE.git',
@@ -152,7 +152,7 @@ export const PROJECTS = [
     filterId: ['JS / API'],
   },
   {
-    name: `Stop-Watch`,
+    name: `Stop_Watch`,
     description: ' A simple stopwatch web application',
     image: project14,
     gitHubLink: 'https://github.com/HusseinAshraf/stop-Watch.git',

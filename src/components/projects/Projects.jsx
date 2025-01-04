@@ -2,8 +2,10 @@ import { PROJECTS } from '../../assets/constants';
 import ProjectCard from './ProjectCard';
 import SectionHeading from '../ui/SectionHeading';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Projects() {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState('ALL');
 
   const filterOptions = ['ALL', 'React', 'JS / API', 'Bootstrap', 'Material UI', 'Tailwind' , 'Html / Css'];
@@ -13,8 +15,8 @@ function Projects() {
     : PROJECTS.filter((project) => project.filterId.includes(filter));
 
   return (
-    <section className="projects-section mx-auto overflow-hidden px-6 py-9 ml-5 flex flex-col" id="projects">
-      <SectionHeading>Projects</SectionHeading>
+    <section className="projects-section mx-7 overflow-hidden px-6 py-9  flex flex-col" id="projects">
+      <SectionHeading>{t("Project")}</SectionHeading>
 
       <div className="flex flex-wrap justify-center  gap-4 mb-6">
         {filterOptions.map((option) => (
@@ -25,7 +27,7 @@ function Projects() {
               ${filter === option ? 'bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 text-white scale-105 shadow-lg' : 'bg-gray-200 text-black hover:bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 hover:text-white'} 
               w-auto`}
           >
-            {option}
+             {t(option)}
           </button>
         ))}
       </div>

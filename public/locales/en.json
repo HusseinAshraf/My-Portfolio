@@ -1,0 +1,144 @@
+{
+  "logo": "Hussein. A",
+  "menu": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "toggleLightMode": "Toggle Light Mode",
+  "hero": {
+    "greeting": "Hey there!",
+    "introduction": "My name is",
+    "name": "Hussein Ashraf",
+    "jobTitle": "Frontend developer React.js with 1 year of experience.",
+    "description": "Building interactive digital solutions that drive business growth.",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "aboutMe": "About Me",
+    "description1": "I am a driven Junior Frontend React Developer, proficient in (HTML5, CSS3, Bootstrap, Sass, Javascript, React, Redux, Material UI, Tailwind, Bootstrap)",
+    "description2": "Passionate about developing user-friendly web applications, to contribute to innovative projects and enhance my skills.",
+    "description3": "My motto is 'Do what you love, love what you do,' and I aim to excel and innovate in this field.",
+    "education": "Education",
+    "degree": "Bachelor of Science in Computer Science & AI",
+    "university": "Beni Suef University, Faculty of Computer and Artificial Intelligence",
+    "graduation": "Graduation: 2019 – 2023 | Beni Suef, Egypt",
+    "graduationProject": "Graduation Project: E-Commerce (Grade: Excellent)",
+    "downloadCV": "Download CV"
+  },
+  "skills": {
+    "MySkills": "My Skills",
+    "Html": "HTML",
+    "Css": "CSS",
+    "Bootstrap": "Bootstrap",
+    "Tailwind": "Tailwind",
+    "Sass": "Sass",
+    "Javascript": "Javascript",
+    "React": "React",
+    "Material UI": "Material UI",
+    "Git": "Git",
+    "Github": "Github"
+  },
+  "Project":"Project",
+  "projects": {
+    "Fresh_Cart": {
+      "name": "Fresh Cart",
+      "description": "An e-commerce website for selling groceries"
+    },
+    "Admin_Dashboard": {
+      "name": "Admin Dashboard",
+      "description": "A dashboard for managing data"
+    },
+    "Foodie": {
+      "name": "Foodie",
+      "description": "A web application for discovering food categories and recipes"
+    },
+    "Data_List": {
+      "name": "Data List",
+      "description": "A web application for displaying data in a list format"
+    },
+    "Yummy_(API-based project)": {
+      "name": "Yummy (API-based project)",
+      "description": "A web application for discovering food categories and recipes"
+    },
+    "Weather_API": {
+      "name": "Weather API",
+      "description": "A web application to get the weather of any city"
+    },
+    "Rayal_Park": {
+      "name": "Rayal Park",
+      "description": "A web application for booking a hotel room"
+    },
+    "Smart_Login": {
+      "name": "Smart Login",
+      "description": "A web application that provides login functionality"
+    },
+    "Bookmark_CRUD": {
+      "name": "Bookmark CRUD",
+      "description": "A web application for creating, reading, updating, and deleting bookmarks"
+    },
+    "CRUD": {
+      "name": "CRUD",
+      "description": "A web application for creating, reading, updating, and deleting data"
+    },
+    "Exam_Mentor": {
+      "name": "Exam Mentor",
+      "description": "Exam Mentor is a web application that helps students prepare for exams by providing quizzes and study materials"
+    },
+    "Daily_Reminders": {
+      "name": "Daily Reminders",
+      "description": "A web application that provides daily reminders"
+    },
+    "TICTAC_TOE": {
+      "name": "TIC-TAC-TOE",
+      "description": "A simple tic-tac-toe game"
+    },
+    "Stop_Watch": {
+      "name": "Stop-Watch",
+      "description": "A simple stopwatch web application"
+    },
+    "Daniels": {
+      "name": "Daniels",
+      "description": "A website template for a fictional restaurant"
+    },
+    "DevFolio": {
+      "name": "DevFolio",
+      "description": "A portfolio website template"
+    },
+    "Meallify": {
+      "name": "Meallify",
+      "description": "Meallify is a simple and responsive website template"
+    },
+    "Fokir": {
+      "name": "Fokir",
+      "description": "Fokir is a simple and responsive website template"
+    },
+    "buttons": {
+      "GitHubRepo": "GitHub Repo",
+      "LiveDemo": "Live Demo"
+    }
+  },
+  "ALL": "All",
+  "React": "React",
+  "JS / API": "JS / API",
+  "Bootstrap": "Bootstrap",
+  "Material UI": "Material UI",
+  "Tailwind": "Tailwind",
+  "Html / Css": "HTML / CSS",
+  "Contact": "Contact me",
+  "GetInTouch": "Get in Touch",
+  "TextInContact": "I'm always open to new opportunities and collaboration. Feel free to reach out!",
+  "Name": "Name",
+  "Email": "Email",
+  "Message": "Message",
+  "Contact Me": "Contact Me",
+  "SendMessage": "Send Message",
+  "FullName": "Full Name",
+  "MessagePlaceholder": "Type your message here...",
+  "AllRightsReserved": "Hussein. A, All rights reserved.",
+  "LinkedIn": "LinkedIn",
+  "GitHub": "GitHub",
+  "Mail": "Mail",
+  "Resume": "Resume"
+}
