@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'; // استيراد useTranslation
 import './Hero.css';
 
 function Hero() {
-  const { t } = useTranslation(); // استخدام الترجمة
+  const { t } = useTranslation(); 
 
   return (
     <section>

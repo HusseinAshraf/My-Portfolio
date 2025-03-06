@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const LanguageSwitch = () => {
   const { i18n } = useTranslation();
 
-  // ضبط اللغة الافتراضية على الإنجليزية عند تحميل المكون
+  
   useEffect(() => {
     if (!i18n.language) {
       i18next.changeLanguage('en');
