@@ -3,7 +3,8 @@ import 'flowbite';
 import './i18n.js';
 import Hero from './components/hero/Hero';
 import Header from './components/header/Header';
-import BackGround from './components/ui/BackGround';
+import 
+BackGround from './components/ui/BackGround';
 import SocialLinks from './components/SocialLinks/SocialLinks';
 import { useTranslation } from 'react-i18next';
 
