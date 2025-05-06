@@ -8,7 +8,7 @@ function Projects() {
   const { t } = useTranslation();
   const [filter, setFilter] = useState('ALL');
 
-  const filterOptions = ['ALL', 'React', 'JS / API', 'Bootstrap', 'Material UI', 'Tailwind' , 'Html / Css'];
+  const filterOptions = ['ALL', 'React', 'Angular' ,'JS / API', 'Bootstrap', 'Material UI', 'Tailwind' , 'Html / Css'];
 
   const filteredProjects = filter === 'ALL'
     ? PROJECTS

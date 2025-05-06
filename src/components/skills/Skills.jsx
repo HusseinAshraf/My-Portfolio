@@ -7,6 +7,9 @@ import Bootstrap from '../../assets/images/Bootstrap.webp';
 import MaterialUI from '../../assets/images/material.webp';
 import Sass from '../../assets/images/Sass.webp';
 import Github from '../../assets/images/Github3.webp';
+import Angular from '../../assets/images/Angular.png';
+import Typescript from '../../assets/images/Typescript.png';
+
 import Git from '../../assets/images/git.webp';
 import SectionHeading from '../ui/SectionHeading';
 import SkillCard from './SkillCard';
@@ -27,6 +30,8 @@ function Skills() {
         <SkillCard image={Sass}>{t('skills.Sass')}</SkillCard>
         <SkillCard image={Javascript}>{t('skills.Javascript')}</SkillCard>
         <SkillCard image={ReactLogo}>{t('skills.React')}</SkillCard>
+        <SkillCard image={Angular}>{t('skills.Angular')}</SkillCard>
+        <SkillCard image={Typescript}>{t('skills.Typescript')}</SkillCard>
         <SkillCard image={MaterialUI}>{t('skills.Material UI')}</SkillCard>
         <SkillCard image={Git}>{t('skills.Git')}</SkillCard>
         <SkillCard image={Github}>{t('skills.Github')}</SkillCard>

@@ -11,14 +11,15 @@
     "greeting": "Hey there!",
     "introduction": "My name is",
     "name": "Hussein Ashraf",
-    "jobTitle": "Frontend developer React.js with 1 year of experience.",
+    "jobTitle": "Frontend Developer  with 1 year or more of experience.",
     "description": "Building interactive digital solutions that drive business growth.",
     "contactMe": "Contact Me"
   },
   "about": {
     "aboutMe": "About Me",
-    "description1": "I am a driven Junior Frontend React Developer, proficient in (HTML5, CSS3, Bootstrap, Sass, Javascript, React, Redux, Material UI, Tailwind, Bootstrap)",
-    "description2": "Passionate about developing user-friendly web applications, to contribute to innovative projects and enhance my skills.",
+    "description1": "I am a Frontend end Developer, proficient in (HTML5, CSS3, Bootstrap, Sass, Javascript, React, Angular,Typescript , Redux, Material UI, Tailwind, Bootstrap, Git, Github).",
+    "description2": "I am passionate about developing user-friendly web applications, to contribute to innovative projects and enhance my skills.",
+    
     "description3": "My motto is 'Do what you love, love what you do,' and I aim to excel and innovate in this field.",
     "education": "Education",
     "degree": "Bachelor of Science in Computer Science & AI",
@@ -36,6 +37,8 @@
     "Sass": "Sass",
     "Javascript": "Javascript",
     "React": "React",
+    "Angular": "Angular",
+    "Typescript": "Typescript",
     "Material UI": "Material UI",
     "Git": "Git",
     "Github": "Github"
@@ -44,7 +47,7 @@
   "projects": {
     "Fresh_Cart": {
       "name": "Fresh Cart",
-      "description": "An e-commerce website for selling groceries"
+      "description": "An e-commerce website for selling products"
     },
     "Admin_Dashboard": {
       "name": "Admin Dashboard",
@@ -53,6 +56,10 @@
     "Foodie": {
       "name": "Foodie",
       "description": "A web application for discovering food categories and recipes"
+    },
+    "ECommerceAngular": {
+      "name": "ECommerceAngular",
+      "description": "An e-commerce website for selling clothes"
     },
     "Data_List": {
       "name": "Data List",
@@ -121,6 +128,7 @@
   },
   "ALL": "All",
   "React": "React",
+  "Angular": "Angular",
   "JS / API": "JS / API",
   "Bootstrap": "Bootstrap",
   "Material UI": "Material UI",

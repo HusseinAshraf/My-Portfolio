@@ -16,6 +16,7 @@ import project15 from '../images/Meallify.PNG';
 import project16 from '../images/Fokir.PNG';
 import project17 from '../images/ExamMentor.PNG';
 import project18 from '../images/DataList.PNG';
+import EcommerceAngular from '../images/Ecommerce-Angular.PNG';
 
 export const MENULINKS = [
   { href: '#about', label: 'about' },
@@ -45,6 +46,16 @@ export const PROJECTS = [
     filterId: ['React', 'Material UI'],
   },
   {
+     name: "ECommerceAngular",
+     description: 'An e-commerce website for selling products',
+      image: EcommerceAngular,
+      gitHubLink: 'https://github.com/HusseinAshraf/ECommerce_Angular.git',
+      liveDemoLink: 'https://e-commerce-angular-iota.vercel.app/login',
+      tech: ['Angular', 'Typescript', 'Tailwind', 'ngxtranslate' ],
+      filterId: ['Angular', 'Tailwind'],
+
+  }
+  ,{
     name: 'Foodie',
     description:
       'A web application for discovering food categories and recipes',
