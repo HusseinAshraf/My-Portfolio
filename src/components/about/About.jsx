@@ -74,6 +74,8 @@ function About() {
             </div>
           </div>
         </div>
+
+        
       </div>
 
       {/* Download CV Button */}

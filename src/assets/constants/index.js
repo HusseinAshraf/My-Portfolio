@@ -17,6 +17,7 @@ import project16 from '../images/Fokir.PNG';
 import project17 from '../images/ExamMentor.PNG';
 import project18 from '../images/DataList.PNG';
 import EcommerceAngular from '../images/Ecommerce-Angular.PNG';
+import alamen from '../images/al-amen.PNG';
 
 export const MENULINKS = [
   { href: '#about', label: 'about' },
@@ -33,6 +34,15 @@ export const PROJECTS = [
     image: project1,
     gitHubLink: 'https://github.com/HusseinAshraf/freshCart-ecommerce.git',
     liveDemoLink: 'https://husseinashraf.github.io/freshCart-ecommerce/#/login',
+    tech: ['React', 'JavaScript', 'Bootstrap', 'Context'],
+    filterId: ['React', 'Bootstrap'],
+  },
+  {
+    name: 'Al-Amen',
+    description: `Al-Amin Landscape Company's website specializing in agriculture, landscaping, and hardscaping.`,
+    image: alamen,
+    gitHubLink: '',
+    liveDemoLink: 'https://al-amen.vercel.app/',
     tech: ['React', 'JavaScript', 'Bootstrap', 'Context'],
     filterId: ['React', 'Bootstrap'],
   },

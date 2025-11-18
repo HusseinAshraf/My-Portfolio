@@ -1,7 +1,7 @@
-import myPhoto from '../../assets/images/my_photo.jpg';
+import myPhoto from '../../assets/images/my_photo.png';
 import { RiArrowDownDoubleFill } from '@remixicon/react';
 import Button from '../ui/Button';
-import { useTranslation } from 'react-i18next'; // استيراد useTranslation
+import { useTranslation } from 'react-i18next';
 import './Hero.css';
 
 function Hero() {
@@ -36,7 +36,7 @@ function Hero() {
           <img
             src={myPhoto}
             alt="My photo"
-            className="mt-12 h-[400px] w -[350px] rounded-3xl md:mt-0 md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[350px]"
+            className="mt-12 w-full rounded-3xl md:mt-0 md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[350px]"
           />
         </div>
       </div>

@@ -19,7 +19,6 @@
     "aboutMe": "About Me",
     "description1": "I am a Frontend end Developer, proficient in (HTML5, CSS3, Bootstrap, Sass, Javascript, React, Angular,Typescript , Redux, Material UI, Tailwind, Bootstrap, Git, Github).",
     "description2": "I am passionate about developing user-friendly web applications, to contribute to innovative projects and enhance my skills.",
-    
     "description3": "My motto is 'Do what you love, love what you do,' and I aim to excel and innovate in this field.",
     "education": "Education",
     "degree": "Bachelor of Science in Computer Science & AI",
@@ -43,83 +42,87 @@
     "Git": "Git",
     "Github": "Github"
   },
-  "Project":"Project",
+  "Project": "Project",
   "projects": {
     "Fresh_Cart": {
       "name": "Fresh Cart",
-      "description": "An e-commerce website for selling products"
+      "description": "An e-commerce platform designed for selling a variety of products online, featuring a user-friendly interface and secure checkout."
     },
     "Admin_Dashboard": {
       "name": "Admin Dashboard",
-      "description": "A dashboard for managing data"
+      "description": "A comprehensive dashboard for administrators to manage, monitor, and analyze data efficiently."
     },
     "Foodie": {
       "name": "Foodie",
-      "description": "A web application for discovering food categories and recipes"
+      "description": "A web application that allows users to explore food categories, discover recipes, and enhance their cooking experience."
     },
     "ECommerceAngular": {
       "name": "ECommerceAngular",
-      "description": "An e-commerce website for selling clothes"
+      "description": "An Angular-based e-commerce website focused on selling clothing items with a modern and responsive design."
     },
     "Data_List": {
       "name": "Data List",
-      "description": "A web application for displaying data in a list format"
+      "description": "A simple web application for displaying and organizing data in a structured list format."
     },
     "Yummy_(API-based project)": {
       "name": "Yummy (API-based project)",
-      "description": "A web application for discovering food categories and recipes"
+      "description": "A dynamic web app powered by APIs to help users discover food categories and recipes easily."
     },
     "Weather_API": {
       "name": "Weather API",
-      "description": "A web application to get the weather of any city"
+      "description": "A web application that fetches real-time weather data for any city using API integration."
     },
     "Rayal_Park": {
       "name": "Rayal Park",
-      "description": "A web application for booking a hotel room"
+      "description": "A hotel booking web application that enables users to reserve rooms online with ease."
     },
     "Smart_Login": {
       "name": "Smart Login",
-      "description": "A web application that provides login functionality"
+      "description": "A secure and responsive web application providing user authentication and login functionality."
     },
     "Bookmark_CRUD": {
       "name": "Bookmark CRUD",
-      "description": "A web application for creating, reading, updating, and deleting bookmarks"
+      "description": "A CRUD-based web app for managing bookmarks, allowing users to create, read, update, and delete entries."
     },
     "CRUD": {
       "name": "CRUD",
-      "description": "A web application for creating, reading, updating, and deleting data"
+      "description": "A basic web application demonstrating Create, Read, Update, and Delete operations on data."
     },
     "Exam_Mentor": {
       "name": "Exam Mentor",
-      "description": "Exam Mentor is a web application that helps students prepare for exams by providing quizzes and study materials"
+      "description": "A study-assistant web app offering quizzes and learning materials to help students prepare for exams."
     },
     "Daily_Reminders": {
       "name": "Daily Reminders",
-      "description": "A web application that provides daily reminders"
+      "description": "A productivity web app that helps users set and manage daily reminders effectively."
     },
     "TICTAC_TOE": {
       "name": "TIC-TAC-TOE",
-      "description": "A simple tic-tac-toe game"
+      "description": "A classic tic-tac-toe game implemented as a simple and interactive web application."
     },
     "Stop_Watch": {
       "name": "Stop-Watch",
-      "description": "A simple stopwatch web application"
+      "description": "A lightweight web app that functions as a stopwatch for tracking time intervals."
     },
     "Daniels": {
       "name": "Daniels",
-      "description": "A website template for a fictional restaurant"
+      "description": "A modern and responsive website template designed for a fictional restaurant."
     },
     "DevFolio": {
       "name": "DevFolio",
-      "description": "A portfolio website template"
+      "description": "A clean and professional portfolio website template for showcasing developer projects and skills."
     },
     "Meallify": {
       "name": "Meallify",
-      "description": "Meallify is a simple and responsive website template"
+      "description": "A responsive and visually appealing website template for food-related content."
+    },
+    "Al-Amen": {
+      "name": "Al-Amen Landscape",
+      "description": "A corporate website for Al-Amin Landscape Company, specializing in agriculture, landscaping, and hardscaping services."
     },
     "Fokir": {
       "name": "Fokir",
-      "description": "Fokir is a simple and responsive website template"
+      "description": "A simple and elegant responsive portfolio template for personal or professional use."
     },
     "buttons": {
       "GitHubRepo": "GitHub Repo",
