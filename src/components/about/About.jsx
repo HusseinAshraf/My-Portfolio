@@ -35,17 +35,6 @@ function About() {
             {t('about.description1')} {/* الترجمة هنا */}
           </p>
 
-          <p
-            className={`mt-4 text-lg transition-all duration-500 ease-in-out ${aboutMeInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[150px]'}`}
-          >
-            {t('about.description2')} {/* الترجمة هنا */}
-          </p>
-
-          <p
-            className={`mt-4 text-lg transition-all duration-500 ease-in-out ${aboutMeInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-150px]'}`}
-          >
-            {t('about.description3')} {/* الترجمة هنا */}
-          </p>
         </div>
 
         {/* Education Section */}

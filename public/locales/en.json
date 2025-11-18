@@ -17,9 +17,8 @@
   },
   "about": {
     "aboutMe": "About Me",
-    "description1": "I am a Frontend end Developer, proficient in (HTML5, CSS3, Bootstrap, Sass, Javascript, React, Angular,Typescript , Redux, Material UI, Tailwind, Bootstrap, Git, Github).",
-    "description2": "I am passionate about developing user-friendly web applications, to contribute to innovative projects and enhance my skills.",
-    "description3": "My motto is 'Do what you love, love what you do,' and I aim to excel and innovate in this field.",
+    "description1": "Motivated and detail-oriented Frontend React Developer with a strong foundation in web technologies, including HTML, CSS, JavaScript (ES6), and React.js. Experienced in creating responsive and user-friendly web applications with a focus on high-quality code and seamless user experiences. Adept at collaborating in team environments, solving complex technical challenges, and committed to continuous learning to deliver innovative solutions that meet client needs.",
+    
     "education": "Education",
     "degree": "Bachelor of Science in Computer Science & AI",
     "university": "Beni Suef University, Faculty of Computer and Artificial Intelligence",
