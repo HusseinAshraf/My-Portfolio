@@ -17,7 +17,7 @@ import project16 from '../images/Fokir.PNG';
 import project17 from '../images/ExamMentor.PNG';
 import project18 from '../images/DataList.PNG';
 import EcommerceAngular from '../images/Ecommerce-Angular.PNG';
-import alamen from '../images/al-amen.PNG';
+import alamen from '../images/al-amen.png';
 
 export const MENULINKS = [
   { href: '#about', label: 'about' },
