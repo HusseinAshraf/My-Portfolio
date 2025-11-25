@@ -7,7 +7,6 @@ import
 BackGround from './components/ui/BackGround';
 import SocialLinks from './components/SocialLinks/SocialLinks';
 import { useTranslation } from 'react-i18next';
-
 const About = lazy(() => import('./components/about/About'));
 const Contact = lazy(() => import('./components/contact/Contact'));
 const Footer = lazy(() => import('./components/footer/Footer'));
