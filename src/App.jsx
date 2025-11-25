@@ -7,7 +7,6 @@ import
 BackGround from './components/ui/BackGround';
 import SocialLinks from './components/SocialLinks/SocialLinks';
 import { useTranslation } from 'react-i18next';
-import { Analytics } from "@vercel/analytics/next"
 
 const About = lazy(() => import('./components/about/About'));
 const Contact = lazy(() => import('./components/contact/Contact'));
@@ -31,7 +30,6 @@ function App() {
     <>
       <BackGround />
       <Header />
-      <Analytics />
       <main className="relative z-30 mx-auto max-w-7xl overflow-x-hidden antialiased">
         <Hero />
         <About />
