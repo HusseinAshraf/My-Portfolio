@@ -1,82 +1,152 @@
 /* eslint-disable react/prop-types */
-import { RiGithubFill, RiPlayCircleFill } from '@remixicon/react';
+import {
+  RiGithubFill,
+  RiPlayCircleFill,
+  RiArrowRightLine,
+} from '@remixicon/react';
 import { useEffect, useRef, useState } from 'react';
 import ProjectButton from './ProjectButton';
 import { useTranslation } from 'react-i18next';
 import './ProjectCard.css';
 
 function ProjectCard({ item, index }) {
-  const { image, name, description, gitHubLink, liveDemoLink, tech } = item;
+  const { image, name, gitHubLink, liveDemoLink, tech } = item;
   const { t } = useTranslation();
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true); // When element is in view, add the 'animate' class
+          setIsVisible(true);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
+    const currentCard = cardRef.current;
+    if (currentCard) observer.observe(currentCard);
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
+      if (currentCard) observer.unobserve(currentCard);
     };
   }, []);
 
   return (
     <div
       ref={cardRef}
-      className={`h-full  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 mb-5 project-card ${isVisible ? 'animate' : ''}`}
-      style={{ animationDelay: `${index * 0.2}s` }} // Add delay based on index
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`group relative h-full w-full max-w-sm bg-white dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-2xl dark:shadow-gray-900/50 transition-all duration-500 ease-out overflow-hidden project-card border border-gray-100 dark:border-gray-800 ${
+        isVisible ? 'animate' : ''
+      }`}
+      style={{ animationDelay: `${index * 0.15}s` }}
     >
-      {/* Ensure the image is within the div and covers only its container */}
-      <a href={liveDemoLink}>
-        <img
-          className="w-full h-[180px] object-cover rounded-t-lg" // Reduced height for image
-          src={image}
-          alt={`${name} image`}
-          loading="lazy"
-        />
-      </a>
-      <div className="px-4 pb-10 pt-5"> {/* Reduced padding */}
-        <a href={liveDemoLink}>
-          <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+      {/* Image Container */}
+      <div className="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+        <a
+          href={liveDemoLink}
+          className="block relative"
+          aria-label={t('projects.aria.viewLiveDemo', { name })}
+        >
+          <img
+            className="w-full h-56 object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-75"
+            src={image}
+            alt={t('projects.aria.previewImage', { name })}
+            loading="lazy"
+          />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+
+          {/* View Project Button */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400 transform translate-y-4 group-hover:translate-y-0">
+            <span className="flex items-center gap-2 bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-3 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              {t('projects.buttons.ViewProject')}
+              <RiArrowRightLine
+                size={16}
+                className="group-hover:translate-x-1 transition-transform duration-300"
+              />
+            </span>
+          </div>
+        </a>
+
+        {/* Featured Badge */}
+        <div className="absolute top-4 left-4 bg-purple-600 dark:bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {t('projects.badges.featured')}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col p-6 h-[calc(100%-14rem)]">
+        {/* Title */}
+        <a
+          href={liveDemoLink}
+          className="block group/title mb-3"
+          aria-label={t('projects.aria.viewDetails', { name })}
+        >
+          <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white group-hover/title:text-purple-600 dark:group-hover/title:text-purple-400 transition-colors duration-300 line-clamp-2">
             {t(`projects.${name}.name`)}
           </h5>
         </a>
-        <p className="mb-3 text-sm md:text-base text-gray-700 dark:text-gray-300">
+
+        {/* Description */}
+        <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300  mb-4">
           {t(`projects.${name}.description`)}
         </p>
-        <div className="mb-3 flex flex-wrap gap-2">
+
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2 mb-auto">
           {tech.map((el, i) => (
-            <p
+            <span
               key={i}
-              className="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full"
+              className="inline-flex items-center bg-gradient-to-r from-purple-500/10 to-indigo-500/10 dark:from-purple-500/20 dark:to-indigo-500/20 text-purple-700 dark:text-purple-300 text-xs font-semibold px-4 py-1.5 rounded-full backdrop-blur-sm border border-purple-200/50 dark:border-purple-700/50 hover:scale-105 transition-all duration-200 shadow-sm"
             >
               {el}
-            </p>
+            </span>
           ))}
         </div>
 
-        <div className="absolute bottom-0  mt-5 mb-2 flex items-center gap-1 lg:gap-4">
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-purple-300 dark:via-purple-700 to-transparent my-4" />
+
+        {/* Buttons */}
+        <div className="flex items-center gap-3">
           <ProjectButton href={gitHubLink} btnColor="black">
-            <RiGithubFill size={20} /> {t('projects.buttons.GitHubRepo')}
+            <RiGithubFill size={18} className="flex-shrink-0" />
+            <span className="hidden sm:inline font-medium">
+              {t('projects.buttons.GitHubRepo')}
+            </span>
+            <span className="sm:hidden font-medium">
+              {t('projects.buttons.Code')}
+            </span>
           </ProjectButton>
+
           <ProjectButton href={liveDemoLink} btnColor="purple">
-            <RiPlayCircleFill size={20} />
-            {t('projects.buttons.LiveDemo')}
+            <RiPlayCircleFill size={18} className="flex-shrink-0" />
+            <span className="hidden sm:inline font-medium">
+              {t('projects.buttons.LiveDemo')}
+            </span>
+            <span className="sm:hidden font-medium">
+              {t('projects.buttons.Demo')}
+            </span>
           </ProjectButton>
         </div>
+      </div>
 
+      {/* Decorative Effects */}
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-700" />
+      <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-2xl group-hover:bg-indigo-500/15 transition-all duration-700" />
+
+      {/* Hover Glow */}
+      <div
+        className={`absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none ${
+          isHovered ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/20 via-transparent to-indigo-500/20" />
       </div>
     </div>
   );

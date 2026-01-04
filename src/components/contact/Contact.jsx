@@ -41,7 +41,7 @@ function Contact() {
     // Send the email
     emailjs
       .sendForm('service_8qk8go4', 'template_9ak1uhu', formRef.current, {
-        publicKey: 'XTyipkAa6MqkpnVAe',
+        publicKey: 'xYphINXzM8WTLu5VN',
         user_email: 'husseinashraf7414@gmail.com',
       })
       .then(
