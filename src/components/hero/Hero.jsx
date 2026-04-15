@@ -77,7 +77,7 @@ function Hero() {
               <div className="absolute inset-0 -m-4 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl" />
 
               {/* Image container */}
-              <div className="relative overflow-visible rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 p-1 shadow-2xl sm:pt-7">
+              <div className="relative overflow-visible rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 p-1 shadow-2xl">
                 <img
                   src={myPhoto}
                   alt={t('hero.name')}
