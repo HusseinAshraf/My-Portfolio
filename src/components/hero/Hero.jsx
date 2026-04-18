@@ -1,102 +1,122 @@
 import myPhoto from '../../assets/images/my_photo.png';
-import { RiArrowDownDoubleFill } from '@remixicon/react';
-import Button from '../ui/Button';
+import { RiArrowDownDoubleFill, RiDownload2Fill, RiGithubFill, RiLinkedinBoxFill } from '@remixicon/react';
 import { useTranslation } from 'react-i18next';
+import { useTypingEffect } from '../../hooks/useTypingEffect';
+import { useCounter } from '../../hooks/useCounter';
 import './Hero.css';
+
+function StatCard({ value, suffix, label, duration }) {
+  const { count, ref } = useCounter(value, duration);
+  return (
+    <div ref={ref} className="stat-card">
+      <div className="stat-value">{count}<span className="stat-suffix">{suffix}</span></div>
+      <div className="stat-label">{label}</div>
+    </div>
+  );
+}
 
 function Hero() {
   const { t } = useTranslation();
 
+  const typingWords = [
+    'Angular 19 Developer',
+    'React.js Developer',
+    'ERP Systems Developer',
+    'Frontend Engineer',
+  ];
+
+  const typedText = useTypingEffect(typingWords, 75, 45, 2200);
+
   return (
-    <section className="relative overflow-visible mt-4">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 -z-10 overflow-visible">
-        <div className="absolute -top-40 -start-40 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-40 -end-40 h-80 w-80 rounded-full bg-secondary/5 blur-3xl" />
-      </div>
+    <section className="hero-section relative overflow-hidden">
+      <div className="hero-grid-bg" />
+      <div className="absolute -top-48 -start-48 h-96 w-96 rounded-full bg-blue-500/8 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 end-0 h-72 w-72 rounded-full bg-teal-500/8 blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex min-h-screen flex-col-reverse items-center justify-center gap-8 py-12 md:flex-row md:gap-12 lg:gap-16">
+        <div className="flex min-h-screen flex-col-reverse items-center justify-center gap-8 py-20 md:flex-row md:gap-16">
 
-          {/* Content Section */}
-          <div className="flex w-full flex-col md:w-1/2 lg:ps-8">
-            <p className="hero-text hero-text-delay-1 mb-4 mt-3 text-center text-xl md:mb-6 md:mt-14 md:text-start md:text-2xl lg:text-3xl">
-              {t('hero.greeting')} 🖐️ {t('hero.introduction')}
+          {/* Content */}
+          <div className="flex w-full flex-col md:w-1/2">
+
+            <div className="hero-text hero-text-delay-1 mb-5 flex justify-center md:justify-start">
+              <span className="available-badge">
+                <span className="available-dot" />
+                {t('hero.availableForWork')}
+              </span>
+            </div>
+
+            <p className="hero-text hero-text-delay-2 mb-2 text-center text-lg text-gray-400 md:text-start">
+              {t('hero.greeting')} 👋
             </p>
-            <h1 className="hero-text hero-text-delay-2 mb-7 text-center font-new-mono text-2xl md:text-start md:text-[28px] lg:text-5xl">
+
+            <h1 className="hero-text hero-text-delay-3 hero-name mb-3 text-center md:text-start">
               {t('hero.name')}
             </h1>
-            <p className="hero-text hero-text-delay-3 mb-4 text-base md:text-2xl">
-              {t('hero.jobTitle')}
-            </p>
-            <p className="hero-text hero-text-delay-4 text-base leading-8 md:text-2xl">
+
+            <div className="hero-text hero-text-delay-4 mb-5 flex h-9 items-center justify-center md:justify-start">
+              <span className="typing-text">{typedText}</span>
+              <span className="typing-cursor">|</span>
+            </div>
+
+            <p className="hero-text hero-text-delay-5 mb-6 text-center text-sm leading-relaxed text-gray-400 md:text-start md:text-base">
               {t('hero.description')}
             </p>
-            {/* CTA Button */}
-            <div className="hero-text hero-text-delay-5 mt-5 flex justify-center md:justify-start">
+
+            <div className="hero-text hero-text-delay-6 mb-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+              <a href="#contact" className="btn-primary">
+                {t('hero.contactMe')}
+                <RiArrowDownDoubleFill size={18} />
+              </a>
               <a
-                href="#contact"
-                className="group inline-flex transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                aria-label={t('hero.contactMe')}
+                href="/resume/my-resume.pdf"
+                download="Hussein-Ashraf-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
               >
-                <Button btnAnimated="primary">
-                  <span className="flex items-center gap-2">
-                    {t('hero.contactMe')}
-                    <RiArrowDownDoubleFill
-                      className="transition-transform duration-300 group-hover:translate-y-1"
-                      size={20}
-                    />
-                  </span>
-                </Button>
+                {t('hero.downloadCV')}
+                <RiDownload2Fill size={18} />
               </a>
             </div>
 
+            <div className="hero-text hero-text-delay-6 mb-10 flex justify-center gap-3 md:justify-start">
+              <a href="https://github.com/HusseinAshraf" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="GitHub">
+                <RiGithubFill size={20} />
+              </a>
+              <a href="https://www.linkedin.com/in/hussein-ashraf-1018a7203/" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="LinkedIn">
+                <RiLinkedinBoxFill size={20} />
+              </a>
+            </div>
 
-
-            {/* Social Proof / Stats */}
-            <div className="hero-text hero-text-delay-6 mt-12 hidden items-center gap-8 md:flex">
-              <div className="text-center md:text-start">
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">2+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{t('hero.yearsExperience')}</div>
-              </div>
-              <div className="text-center md:text-start">
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">50+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{t('hero.projectsCompleted')}</div>
-              </div>
-              <div className="text-center md:text-start">
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">30+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{t('hero.happyClients')}</div>
-              </div>
+            <div className="hero-text hero-text-delay-6 hidden items-center gap-8 md:flex">
+              <StatCard value={2} suffix="+" label={t('hero.yearsExperience')} duration={1500} />
+              <div className="stat-divider" />
+              <StatCard value={5} suffix="" label={t('hero.enterpriseSystems')} duration={1200} />
+              <div className="stat-divider" />
+              <StatCard value={30} suffix="%" label={t('hero.performanceBoost')} duration={1800} />
             </div>
           </div>
 
-          {/* Image Section */}
+          {/* Image */}
           <div className="hero-image flex w-full items-center justify-center md:w-1/2">
-            <div className="relative">
-              {/* Decorative ring around image */}
-              <div className="absolute inset-0 -m-4 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl" />
-
-              {/* Image container */}
-              <div className="relative overflow-visible rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 p-1 shadow-2xl">
-                <img
-                  src={myPhoto}
-                  alt={t('hero.name')}
-                  className="h-auto w-auto max-h-[70vh] max-w-[70vw] rounded-3xl object-contain"
-                  loading="eager"
-                />
+            <div className="hero-image-wrapper">
+              <div className="hero-image-ring" />
+              <div className="hero-image-container">
+                <img src={myPhoto} alt={t('hero.name')} className="hero-photo" loading="eager" />
               </div>
-
-
+              <div className="hero-badge hero-badge-angular">Angular 19</div>
+              <div className="hero-badge hero-badge-react">React.js</div>
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="flex flex-col items-center gap-2 opacity-50">
-          <span className="text-xs text-gray-600 dark:text-gray-400">{t('hero.scroll')}</span>
-          <RiArrowDownDoubleFill size={20} className="text-gray-600 dark:text-gray-400" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+        <div className="flex flex-col items-center gap-1">
+          <span className="text-xs text-gray-500">{t('hero.scroll')}</span>
+          <RiArrowDownDoubleFill size={18} className="text-gray-500" />
         </div>
       </div>
     </section>

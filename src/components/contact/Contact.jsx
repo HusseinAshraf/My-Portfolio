@@ -1,151 +1,220 @@
-import { useRef } from 'react';
-import Swal from 'sweetalert2';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Lottie from 'lottie-react';
-import SectionHeading from '../ui/SectionHeading';
 import contact from '../../assets/contact_animation/Contact.json';
-import { RiLinkedinBoxFill, RiMailSendFill, RiPhoneFill, RiWhatsappFill } from '@remixicon/react';
-import Button from '../ui/Button';
+import {
+  RiLinkedinBoxFill,
+  RiMailSendFill,
+  RiPhoneFill,
+  RiWhatsappFill,
+  RiGithubFill,
+  RiCheckboxCircleFill,
+  RiErrorWarningFill,
+  RiSendPlaneFill,
+  RiLoader4Line,
+} from '@remixicon/react';
 import { useTranslation } from 'react-i18next';
+import './Contact.css';
+
+/* ── inline toast instead of SweetAlert2 ── */
+function Toast({ status, message, onClose }) {
+  if (!status) return null;
+  const isSuccess = status === 'success';
+  return (
+    <div className={`contact-toast ${isSuccess ? 'contact-toast--success' : 'contact-toast--error'}`}>
+      <div className="toast-icon">
+        {isSuccess ? <RiCheckboxCircleFill size={20} /> : <RiErrorWarningFill size={20} />}
+      </div>
+      <p className="toast-msg">{message}</p>
+      <button className="toast-close" onClick={onClose} aria-label="close">×</button>
+    </div>
+  );
+}
+
+/* social links config */
+const SOCIAL = [
+  {
+    key: 'linkedin',
+    Icon: RiLinkedinBoxFill,
+    label: 'LinkedIn',
+    sub: 'hussein-ashraf',
+    href: 'https://www.linkedin.com/in/hussein-ashraf-1018a7203/',
+    color: '#3b82f6',
+    glow: 'rgba(59,130,246,0.25)',
+  },
+  {
+    key: 'whatsapp',
+    Icon: RiWhatsappFill,
+    label: 'WhatsApp',
+    sub: '+20 111 126 8591',
+    href: `https://wa.me/+201112685912?text=${encodeURIComponent("Hi Hussein, I'm interested in your frontend skills!")}`,
+    color: '#22c55e',
+    glow: 'rgba(34,197,94,0.25)',
+  },
+  {
+    key: 'email',
+    Icon: RiMailSendFill,
+    label: 'Email',
+    sub: 'husseinashraf7414@gmail.com',
+    href: 'mailto:husseinashraf7414@gmail.com',
+    color: '#f472b6',
+    glow: 'rgba(244,114,182,0.25)',
+  },
+  {
+    key: 'phone',
+    Icon: RiPhoneFill,
+    label: 'Phone',
+    sub: '+20 111 126 8591',
+    href: 'tel:+201112685912',
+    color: '#34d399',
+    glow: 'rgba(52,211,153,0.25)',
+  },
+  {
+    key: 'github',
+    Icon: RiGithubFill,
+    label: 'GitHub',
+    sub: 'github.com/HusseinAshraf',
+    href: 'https://github.com/HusseinAshraf',
+    color: '#94a3b8',
+    glow: 'rgba(148,163,184,0.2)',
+  },
+];
 
 function Contact() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const formRef = useRef();
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const messageRef = useRef();
-
-  const phoneNumber = '+201112685912';
-  const message =
-    "Hi, I'm interested in your frontend skills. Can you tell me more about your self?";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const [sending, setSending] = useState(false);
+  const [toast, setToast] = useState(null); // { status, message }
 
   const handleSendEmail = (e) => {
     e.preventDefault();
+    setSending(true);
+    setToast(null);
 
-    // Log form values
-    console.log("Name:", nameRef.current.value);
-    console.log("Email:", emailRef.current.value);
-    console.log("Message:", messageRef.current.value);
+    /* Hardcoded fallback so it works even if .env isn't loaded in dev */
+    const serviceId  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'service_8qk8go4';
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_9ak1uhu';
+    const publicKey  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'xYphINXzM8WTLu5VN';
 
-    // Validate if all fields are filled
-    if (!nameRef.current.value || !emailRef.current.value || !messageRef.current.value) {
-      Swal.fire({
-        title: 'Error!',
-        text: 'Please fill all fields before sending the message.',
-        icon: 'error',
-      });
-      return;
-    }
-
-    // Send the email
     emailjs
-      .sendForm('service_8qk8go4', 'template_9ak1uhu', formRef.current, {
-        publicKey: 'xYphINXzM8WTLu5VN',
-        user_email: 'husseinashraf7414@gmail.com',
-      })
+      .sendForm(serviceId, templateId, formRef.current, { publicKey })
       .then(
         () => {
-          Swal.fire({
-            title: 'Success!',
-            text: 'Message sent successfully',
-            icon: 'success',
-          });
-          nameRef.current.value = '';
-          emailRef.current.value = '';
-          messageRef.current.value = '';
+          setSending(false);
+          setToast({ status: 'success', message: t('contact.successText') });
+          formRef.current.reset();
         },
-        (error) => {
-          Swal.fire({
-            title: 'Error!',
-            text: `Message failed to send: ${error.text}`,
-            icon: 'error',
-          });
+        (err) => {
+          setSending(false);
+          /* err.text (v3) OR err.message (v4) */
+          const reason = err?.text || err?.message || 'Unknown error';
+          setToast({ status: 'error', message: `${t('contact.sendFailed')}: ${reason}` });
         }
       );
   };
 
   return (
-    <section className="contact-section relative px-16 pb-3 pt-9  z-20 mt-5 w-full overflow-hidden bg-stone-950/30  backdrop-blur-lg" id="contact">
-      <SectionHeading>{t('Contact')}</SectionHeading>
+    <section className="contact-section" id="contact">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="mx-auto mb-16 max-w-7xl ">
-        <div className="flex flex-col  items-center justify-between md:flex-row">
-          {/* Contact Info Section */}
-          <div className="mb-8 ml-1 text-center md:mb-0 md:w-1/2 md:text-start">
-            <h2 className="mb-3 text-3xl font-bold text-purple-500">{t('GetInTouch')}</h2>
-            <p className="mb-4">
-              {t('TextInContact')}
-            </p>
-            <div
-              className={`flex items-center ${i18n.language === 'ar' ? 'justify-start space-x-reverse' : 'justify-end'
-                } space-x-4 md:justify-start`}
-            >
-              <a href="https://www.linkedin.com/in/hussein-ashraf-1018a7203/" className="text-[#0a66c2]" target="_blank">
-                <RiLinkedinBoxFill aria-label="LinkedIn" />
-              </a>
-              <a href={whatsappUrl} className="text-[#25d366]" target="_blank" rel="noopener noreferrer">
-                <RiWhatsappFill aria-label="WhatsApp" />
-              </a>
-              <a href="tel:+201112685912" className="text-[#06f55e]">
-                <RiPhoneFill aria-label="Phone" />
-              </a>
+        {/* ── Heading ── */}
+        <div className="contact-heading">
+          <span className="section-label">{t('contact.label')}</span>
+          <h2 className="section-heading">{t('Contact')}</h2>
+          <p className="contact-sub">{t('TextInContact')}</p>
+        </div>
+
+        <Toast status={toast?.status} message={toast?.message} onClose={() => setToast(null)} />
+
+        <div className="contact-grid">
+
+          {/* ── Left: social links + lottie ── */}
+          <div className="contact-info">
+            <p className="contact-info-title">{t('GetInTouch')}</p>
+
+            <div className="contact-social-grid">
+              {SOCIAL.map(({ key, Icon, label, sub, href, color, glow }) => (
+                <a
+                  key={key}
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  className="social-card"
+                  style={{ '--card-color': color, '--card-glow': glow }}
+                >
+                  <div className="social-card-icon">
+                    <Icon size={22} />
+                  </div>
+                  <div className="social-card-text">
+                    <span className="social-card-label">{label}</span>
+                    <span className="social-card-sub">{sub}</span>
+                  </div>
+                  <div className="social-card-arrow">→</div>
+                </a>
+              ))}
             </div>
 
-            <Lottie
-              animationData={contact}
-              className="mx-auto w-[300px] md:h-[350px] md:w-[350px] lg:h-[500px] lg:w-[500px]"
-            />
+            <Lottie animationData={contact} className="contact-lottie" />
           </div>
 
-          {/* Form Section */}
-          <form
-            ref={formRef}
-            className="w-full rounded-lg border border-purple-500 p-6 shadow-sm shadow-purple-500 md:w-1/2"
-            onSubmit={handleSendEmail}
-          >
-            <h1 className="text-center md:text-start mb-7 text-4xl font-bold">{t("Contact")}</h1>
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-medium">{t("Name")}</label>
-              <input
-                type="text"
-                id="name"
-                name="user_name"
-                ref={nameRef}
-                placeholder={t("FullName")}
-                required
-                className="mx-auto mt-2 block w-full rounded-md border-purple-500 p-2 text-stone-800 shadow-sm outline-none focus:border-purple-600 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium">{t("Email")}</label>
-              <input
-                type="email"
-                id="email"
-                name="user_email"
-                ref={emailRef}
-                placeholder={t("Email")}
-                required
-                className="mx-auto mt-2 block w-full rounded-md border-purple-500 p-2 text-stone-800 shadow-sm outline-none focus:border-purple-600 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="message" className="block text-sm font-medium">{t("Message")}</label>
-              <textarea
-                id="message"
-                name="message"
-                ref={messageRef}
-                placeholder={t("MessagePlaceholder")}
-                required
-                className="focus:ring-opacity- mx-auto mt-2 block h-32 w-full resize-none rounded-md border-purple-500 p-2 text-stone-800 shadow-sm outline-none focus:border-purple-600 focus:ring focus:ring-purple-500"
-              />
-            </div>
-            <div className="flex justify-center md:justify-start">
-              <Button btnAnimated="primary">
-                {t("SendMessage")} <RiMailSendFill className="ml-3" size={20} />
-              </Button>
-            </div>
-          </form>
+          {/* ── Right: Form ── */}
+          <div className="contact-form-wrapper">
+            {/* decorative top bar */}
+            <div className="form-top-bar" />
+
+            <form ref={formRef} className="contact-form" onSubmit={handleSendEmail} noValidate>
+              <div className="form-header">
+                <div className="form-header-icon">
+                  <RiMailSendFill size={18} />
+                </div>
+                <h3 className="contact-form-title">{t('Contact')}</h3>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="c-name">{t('Name')}</label>
+                  <input
+                    type="text"
+                    id="c-name"
+                    name="user_name"
+                    placeholder={t('FullName')}
+                    required
+                    autoComplete="name"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="c-email">{t('Email')}</label>
+                  <input
+                    type="email"
+                    id="c-email"
+                    name="user_email"
+                    placeholder="example@email.com"
+                    required
+                    autoComplete="email"
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="c-message">{t('Message')}</label>
+                <textarea
+                  id="c-message"
+                  name="message"
+                  placeholder={t('MessagePlaceholder')}
+                  required
+                />
+              </div>
+
+              <button type="submit" className={`contact-submit-btn ${sending ? 'sending' : ''}`} disabled={sending}>
+                {sending ? (
+                  <><RiLoader4Line size={18} className="spin-icon" /> Sending…</>
+                ) : (
+                  <><RiSendPlaneFill size={18} /> {t('SendMessage')}</>
+                )}
+              </button>
+            </form>
+          </div>
+
         </div>
       </div>
     </section>

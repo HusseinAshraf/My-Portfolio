@@ -4,7 +4,8 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "experience": "Experience"
   },
   "toggleLightMode": "Toggle Light Mode",
   "hero": {
@@ -17,7 +18,11 @@
     "yearsExperience": "Years Experience",
     "projectsCompleted": "Projects Completed",
     "happyClients": "Happy Clients",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "availableForWork": "Available for Work",
+    "downloadCV": "Download CV",
+    "enterpriseSystems": "Enterprise Systems",
+    "performanceBoost": "API Performance Boost"
   },
   "about": {
     "aboutMe": "About Me",
@@ -50,7 +55,9 @@
     "university": "Beni Suef University, Faculty of Computer and Artificial Intelligence",
     "graduation": "Graduation: 2019 – 2023 | Beni Suef, Egypt",
     "graduationProject": "Graduation Project: E-Commerce (Grade: Excellent)",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "label": "Get to Know Me",
+    "idealStudent": "Ideal Student Award — Beni Suef University (2022)"
   },
   "skills": {
     "MySkills": "My Skills",
@@ -204,5 +211,18 @@
   "LinkedIn": "LinkedIn",
   "GitHub": "GitHub",
   "Mail": "Mail",
-  "Resume": "Resume"
+  "Resume": "Resume",
+  "experience": {
+    "label": "Career Path",
+    "heading": "Work Experience",
+    "sub": "From training to enterprise-level Angular & React development"
+  },
+  "contact": {
+    "label": "Say Hello",
+    "errorTitle": "Error!",
+    "errorText": "Please fill all fields before sending.",
+    "successTitle": "Sent!",
+    "successText": "Message sent successfully.",
+    "sendFailed": "Failed to send"
+  }
 }

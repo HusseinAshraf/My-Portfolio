@@ -1,44 +1,220 @@
-@keyframes fade-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-150px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+/* ── About Section ── */
+.about-section {
+  padding: 5rem 0;
+}
+
+/* ── Shared labels & headings ── */
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 0.6rem;
+}
+.section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  /* bright white with subtle glow so it reads on dark bg */
+  color: #ffffff;
+  text-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+}
+
+.about-label-row {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+/* ── Grid ── */
+.about-grid {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
   }
 }
 
-@keyframes fade-in-right {
-  0% {
-    opacity: 0;
-    transform: translateX(150px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* ── Bio column ── */
+.about-bio {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.about-bio--visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.about-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+}
+.about-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+/* "About Me" sub-title — bright, not muted */
+.about-icon-label {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #f1f5f9;
 }
 
-.animate-fade-in-left {
-  animation: fade-in-left 0.6s ease-in-out forwards;
+/* Body text — lighter than before for readability */
+.about-desc {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: #cbd5e1;   /* was #94a3b8 — too dim */
+  margin-bottom: 1.4rem;
 }
 
-.animate-fade-in-right {
-  animation: fade-in-right 0.6s ease-in-out forwards;
+/* ── Chips ── */
+.about-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.8rem;
+}
+.about-chip {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: #7dd3fc;   /* sky-300 — visible on dark */
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-in-out forwards;
+/* ── Download CV ── */
+.about-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1d4ed8, #0891b2);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(29, 78, 216, 0.3);
+}
+.about-cv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.45);
+}
+
+/* ── Education column ── */
+.about-edu {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.edu-card {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background: rgba(15, 23, 42, 0.5);   /* darker, not washed out */
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  backdrop-filter: blur(6px);
+}
+.edu-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.edu-card:hover {
+  background: rgba(30, 41, 59, 0.7);
+  border-color: rgba(56, 189, 248, 0.28);
+}
+
+.edu-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+}
+/* Education text — bright enough to read */
+.edu-text {
+  font-size: 0.78rem;
+  color: #cbd5e1;   /* was #94a3b8 */
+  line-height: 1.5;
+}
+
+/* ── Award strip ── */
+.about-award {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  color: #fcd34d;   /* amber-300 — clear on dark */
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+.about-award--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Light mode ── */
+html:not(.dark) .section-heading { color: #0f172a; text-shadow: none; }
+html:not(.dark) .about-icon-label { color: #1e293b; }
+html:not(.dark) .about-desc { color: #475569; }
+html:not(.dark) .about-chip {
+  color: #1d4ed8;
+  background: rgba(29, 78, 216, 0.06);
+  border-color: rgba(29, 78, 216, 0.2);
+}
+html:not(.dark) .edu-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(148, 163, 184, 0.22);
+  backdrop-filter: none;
+}
+html:not(.dark) .edu-card:hover { background: #fff; }
+html:not(.dark) .edu-text { color: #475569; }
+html:not(.dark) .about-award {
+  background: rgba(245, 158, 11, 0.06);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #92400e;
 }

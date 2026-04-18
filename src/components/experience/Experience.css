@@ -1,0 +1,282 @@
+/* ── Experience Section ── */
+.exp-section {
+  padding: 5rem 0;
+}
+
+/* ── Section heading ── */
+.exp-section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.exp-section-title--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.exp-section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+.exp-section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 0 40px rgba(56, 189, 248, 0.18);
+  margin-bottom: 0.75rem;
+}
+.exp-section-sub {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Timeline ── */
+.exp-timeline {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 2.5rem;
+}
+.exp-timeline-line {
+  position: absolute;
+  left: 0.85rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 189, 248, 0),
+    rgba(56, 189, 248, 0.5) 15%,
+    rgba(139, 92, 246, 0.5) 50%,
+    rgba(245, 158, 11, 0.5) 85%,
+    rgba(245, 158, 11, 0)
+  );
+  border-radius: 2px;
+}
+
+/* ── Card ── */
+.exp-card {
+  position: relative;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.exp-card--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Timeline dot ── */
+.exp-dot {
+  position: absolute;
+  left: -2.1rem;
+  top: 1.1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1;
+}
+.exp-card:hover .exp-dot {
+  transform: scale(1.12);
+}
+
+/* Dot colour variants */
+.exp-blue .exp-dot   { background: rgba(29, 78, 216, 0.25);  border-color: #60a5fa; color: #93c5fd; box-shadow: 0 0 12px rgba(96,165,250,0.3); }
+.exp-teal .exp-dot   { background: rgba(8, 145, 178, 0.25);  border-color: #22d3ee; color: #67e8f9; box-shadow: 0 0 12px rgba(34,211,238,0.3); }
+.exp-purple .exp-dot { background: rgba(124, 58, 237, 0.25); border-color: #a78bfa; color: #c4b5fd; box-shadow: 0 0 12px rgba(167,139,250,0.3); }
+.exp-amber .exp-dot  { background: rgba(217, 119, 6, 0.25);  border-color: #fbbf24; color: #fde68a; box-shadow: 0 0 12px rgba(251,191,36,0.3); }
+
+/* ── Card inner ── */
+.exp-card-inner {
+  background: rgba(15, 23, 42, 0.65);   /* dark, not washed-out white */
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 16px;
+  padding: 1.5rem 1.7rem;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+.exp-card:hover .exp-card-inner {
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Coloured left border accent */
+.exp-blue .exp-card-inner   { border-left: 3px solid rgba(96, 165, 250, 0.5); }
+.exp-teal .exp-card-inner   { border-left: 3px solid rgba(34, 211, 238, 0.5); }
+.exp-purple .exp-card-inner { border-left: 3px solid rgba(167, 139, 250, 0.5); }
+.exp-amber .exp-card-inner  { border-left: 3px solid rgba(251, 191, 36, 0.5); }
+
+/* Hover — brighten border accent */
+.exp-blue:hover .exp-card-inner   { border-color: rgba(96, 165, 250, 0.45); }
+.exp-teal:hover .exp-card-inner   { border-color: rgba(34, 211, 238, 0.45); }
+.exp-purple:hover .exp-card-inner { border-color: rgba(167, 139, 250, 0.45); }
+.exp-amber:hover .exp-card-inner  { border-color: rgba(251, 191, 36, 0.45); }
+
+/* ── Header ── */
+.exp-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.exp-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.exp-role-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+/* Job title — pure white, highest contrast */
+.exp-role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+}
+.exp-current-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+}
+/* Company name — coloured per variant */
+.exp-company {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.exp-blue   .exp-company { color: #93c5fd; }
+.exp-teal   .exp-company { color: #67e8f9; }
+.exp-purple .exp-company { color: #c4b5fd; }
+.exp-amber  .exp-company { color: #fde68a; }
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-end;
+}
+.exp-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  color: #94a3b8;
+}
+
+/* ── Highlights ── */
+.exp-highlights {
+  list-style: none;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.exp-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.86rem;
+  color: #cbd5e1;   /* was #94a3b8 — too dim */
+  line-height: 1.6;
+}
+.exp-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.exp-blue   .exp-check { color: #60a5fa; }
+.exp-teal   .exp-check { color: #22d3ee; }
+.exp-purple .exp-check { color: #a78bfa; }
+.exp-amber  .exp-check { color: #fbbf24; }
+
+/* ── Tech tags ── */
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.exp-tech-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #cbd5e1;
+  transition: background 0.15s ease;
+}
+.exp-tech-tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Colour-tinted tech tags per card */
+.exp-blue .exp-tech-tag   { border-color: rgba(96,165,250,0.2); }
+.exp-teal .exp-tech-tag   { border-color: rgba(34,211,238,0.2); }
+.exp-purple .exp-tech-tag { border-color: rgba(167,139,250,0.2); }
+.exp-amber .exp-tech-tag  { border-color: rgba(251,191,36,0.2); }
+
+/* ── Light mode ── */
+html:not(.dark) .exp-section-heading { color: #0f172a; text-shadow: none; }
+html:not(.dark) .exp-section-sub { color: #64748b; }
+html:not(.dark) .exp-card-inner {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(148, 163, 184, 0.22);
+  backdrop-filter: none;
+}
+html:not(.dark) .exp-card:hover .exp-card-inner {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+html:not(.dark) .exp-role { color: #0f172a; }
+html:not(.dark) .exp-meta span { color: #64748b; }
+html:not(.dark) .exp-company { color: inherit; }
+html:not(.dark) .exp-blue  .exp-company { color: #1d4ed8; }
+html:not(.dark) .exp-teal  .exp-company { color: #0891b2; }
+html:not(.dark) .exp-purple .exp-company { color: #7c3aed; }
+html:not(.dark) .exp-amber  .exp-company { color: #b45309; }
+html:not(.dark) .exp-highlights li { color: #334155; }
+html:not(.dark) .exp-tech-tag {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.14);
+  color: #334155;
+}
+
+/* ── RTL ── */
+[dir="rtl"] .exp-timeline { padding-left: 0; padding-right: 2.5rem; }
+[dir="rtl"] .exp-timeline-line { left: auto; right: 0.85rem; }
+[dir="rtl"] .exp-dot { left: auto; right: -2.1rem; }
+[dir="rtl"] .exp-card { transform: translateX(16px); }
+[dir="rtl"] .exp-card--visible { transform: translateX(0); }
+[dir="rtl"] .exp-meta { align-items: flex-start; }
+[dir="rtl"] .exp-blue .exp-card-inner   { border-left: none; border-right: 3px solid rgba(96,165,250,0.5); }
+[dir="rtl"] .exp-teal .exp-card-inner   { border-left: none; border-right: 3px solid rgba(34,211,238,0.5); }
+[dir="rtl"] .exp-purple .exp-card-inner { border-left: none; border-right: 3px solid rgba(167,139,250,0.5); }
+[dir="rtl"] .exp-amber .exp-card-inner  { border-left: none; border-right: 3px solid rgba(251,191,36,0.5); }

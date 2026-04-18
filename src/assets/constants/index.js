@@ -21,28 +21,39 @@ import alamen from '../images/al-amen.png';
 import kamma from '../images/kamma.png';
 
 export const MENULINKS = [
-  { href: '#about', label: 'about' },
-  { href: '#skills', label: 'skills' },
-  { href: '#projects', label: 'projects' },
-  { href: '#contact', label: 'contact' },
+  { href: '#about',      label: 'about' },
+  { href: '#experience', label: 'experience' },
+  { href: '#skills',     label: 'skills' },
+  { href: '#projects',   label: 'projects' },
+  { href: '#contact',    label: 'contact' },
 ];
 
 export const PROJECTS = [
-
-  // React
-
+  // ── Featured (shown by default) ──
   {
-    name: "Kamma",
-    description: "A freelance project for a pharmacy, developed as a modern Angular web application styled with Tailwind CSS and built using PrimeNG components, featuring responsive UI elements and a smooth user experience.",
-    tech: ["Angular", "Tailwind CSS", "PrimeNG", "TypeScript", "ngx-translate"],
+    name: 'Kamma',
+    featured: true,
+    description: 'Pharmacy E-Commerce Platform — Angular with Tailwind CSS and PrimeNG components.',
+    tech: ['Angular', 'Tailwind CSS', 'PrimeNG', 'TypeScript', 'ngx-translate'],
     filterId: ['Angular', 'Tailwind'],
     image: kamma,
-    gitHubLink: "",
-    liveDemoLink: "https://kamma-zeta.vercel.app/landingpage/home"
+    gitHubLink: '',
+    liveDemoLink: 'https://kamma-zeta.vercel.app/landingpage/home',
+  },
+  {
+    name: 'ECommerceAngular',
+    featured: true,
+    description: 'Enterprise Angular e-commerce with TypeScript, Tailwind CSS, and multilingual support.',
+    image: EcommerceAngular,
+    gitHubLink: 'https://github.com/HusseinAshraf/ECommerce_Angular.git',
+    liveDemoLink: 'https://e-commerce-angular-iota.vercel.app/login',
+    tech: ['Angular', 'TypeScript', 'Tailwind CSS', 'ngx-translate'],
+    filterId: ['Angular', 'Tailwind'],
   },
   {
     name: 'Fresh_Cart',
-    description: 'A full-featured e-commerce web application built with React and Context API, allowing users to browse products, manage a shopping cart, and complete orders through a responsive and user-friendly interface.',
+    featured: true,
+    description: 'Full-featured React e-commerce with Context API — product browsing, cart, and orders.',
     image: project1,
     gitHubLink: 'https://github.com/HusseinAshraf/freshCart-ecommerce.git',
     liveDemoLink: 'https://husseinashraf.github.io/freshCart-ecommerce/#/login',
@@ -51,16 +62,18 @@ export const PROJECTS = [
   },
   {
     name: 'Al-Amen',
-    description: 'A corporate website developed with React to showcase Al-Amen Landscape Company services, including agriculture, landscaping, and hardscaping, with a clean design and responsive layout.',
+    featured: true,
+    description: 'Corporate React website for Al-Amen Landscape Company with clean responsive layout.',
     image: alamen,
     gitHubLink: '',
     liveDemoLink: 'https://al-amen.vercel.app/',
-    tech: ['React.js', 'JavaScript (ES6+)', 'Bootstrap', 'Context API'],
+    tech: ['React.js', 'JavaScript (ES6+)', 'Bootstrap'],
     filterId: ['React', 'Bootstrap'],
   },
   {
     name: 'Admin_Dashboard',
-    description: 'A data management dashboard built using React and Material UI, providing administrators with tools to visualize, manage, and organize data efficiently through a modern UI.',
+    featured: true,
+    description: 'React + Material UI admin dashboard for data visualization and management.',
     image: project2,
     gitHubLink: 'https://github.com/HusseinAshraf/Statck-Dashboard.git',
     liveDemoLink: 'https://husseinashraf.github.io/Statck-Dashboard/',
@@ -68,37 +81,30 @@ export const PROJECTS = [
     filterId: ['React', 'Material UI'],
   },
   {
-    name: 'ECommerceAngular',
-    description: 'An Angular-based e-commerce website using TypeScript and Tailwind CSS, featuring product listings, authentication, and multilingual support via ngx-translate.',
-    image: EcommerceAngular,
-    gitHubLink: 'https://github.com/HusseinAshraf/ECommerce_Angular.git',
-    liveDemoLink: 'https://e-commerce-angular-iota.vercel.app/login',
-    tech: ['Angular', 'TypeScript', 'Tailwind CSS', 'ngx-translate'],
-    filterId: ['Angular', 'Tailwind'],
-  },
-  {
     name: 'Foodie',
-    description: 'A React web application that enables users to explore food categories and recipes, built with Tailwind CSS and Context API for efficient state management.',
+    featured: true,
+    description: 'React food explorer with Tailwind CSS and Context API state management.',
     image: project3,
     gitHubLink: 'https://github.com/HusseinAshraf/Foodie.git',
     liveDemoLink: 'https://husseinashraf.github.io/Foodie/',
     tech: ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'Context API'],
     filterId: ['React', 'Tailwind'],
   },
+  // ── Other projects ──
   {
     name: 'Data_List',
-    description: 'A React application for fetching and displaying data using Axios, featuring internationalization with i18next and a clean UI built with Tailwind CSS.',
+    featured: false,
+    description: 'React app using Axios with i18next internationalization and Tailwind CSS.',
     image: project18,
     gitHubLink: 'https://github.com/HusseinAshraf/DataList.git',
     liveDemoLink: 'https://data-list-jade.vercel.app/',
-    tech: ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'Axios', 'i18next'],
+    tech: ['React.js', 'Tailwind CSS', 'Axios', 'i18next'],
     filterId: ['React', 'Tailwind'],
   },
-
-  // JS / API
   {
     name: 'Yummy_(API-based project)',
-    description: 'An API-driven JavaScript application that allows users to discover food categories and recipes easily.',
+    featured: false,
+    description: 'API-driven JavaScript app for discovering food categories and recipes.',
     image: project4,
     gitHubLink: 'https://github.com/HusseinAshraf/yummy.git',
     liveDemoLink: 'https://husseinashraf.github.io/yummy/',
@@ -107,16 +113,18 @@ export const PROJECTS = [
   },
   {
     name: 'Weather_API',
-    description: 'A JavaScript-based weather application that fetches real-time weather data for any city using API integration.',
+    featured: false,
+    description: 'Real-time weather data for any city using JavaScript and REST API.',
     image: project5,
     gitHubLink: 'https://github.com/HusseinAshraf/weather.git',
     liveDemoLink: 'https://husseinashraf.github.io/weather/',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'REST APIs', 'Bootstrap'],
-    filterId: ['JS / API', 'Bootstrap'],
+    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'REST APIs'],
+    filterId: ['JS / API'],
   },
   {
     name: 'Rayal_Park',
-    description: 'A hotel booking web application built with JavaScript and Bootstrap, enabling users to view rooms and simulate the booking process.',
+    featured: false,
+    description: 'Hotel booking web app with room browsing and simulated booking flow.',
     image: project6,
     gitHubLink: 'https://github.com/HusseinAshraf/Rayal-Park.git',
     liveDemoLink: 'https://husseinashraf.github.io/Rayal-Park/',
@@ -125,7 +133,8 @@ export const PROJECTS = [
   },
   {
     name: 'Smart_Login',
-    description: 'A secure and responsive web application providing user authentication and login functionality.',
+    featured: false,
+    description: 'Secure responsive authentication system with form validation.',
     image: project7,
     gitHubLink: 'https://github.com/HusseinAshraf/Smart-login.git',
     liveDemoLink: 'https://husseinashraf.github.io/Smart-login/',
@@ -134,7 +143,8 @@ export const PROJECTS = [
   },
   {
     name: 'Bookmark_CRUD',
-    description: 'A CRUD-based web app for managing bookmarks, allowing users to create, read, update, and delete entries.',
+    featured: false,
+    description: 'Full CRUD bookmark manager built in JavaScript.',
     image: project8,
     gitHubLink: 'https://github.com/HusseinAshraf/Bookmark-crud.git',
     liveDemoLink: 'https://husseinashraf.github.io/Bookmark-crud/',
@@ -143,7 +153,8 @@ export const PROJECTS = [
   },
   {
     name: 'CRUD',
-    description: 'A simple web application demonstrating Create, Read, Update, and Delete operations on data.',
+    featured: false,
+    description: 'Simple CRUD data management demonstration with vanilla JavaScript.',
     image: project9,
     gitHubLink: 'https://github.com/HusseinAshraf/Crud.git',
     liveDemoLink: 'https://husseinashraf.github.io/Crud/',
@@ -152,16 +163,18 @@ export const PROJECTS = [
   },
   {
     name: 'Exam_Mentor',
-    description: 'An educational web application that helps students prepare for exams by providing interactive quizzes and learning materials via APIs.',
+    featured: false,
+    description: 'Educational quiz app with API-driven interactive questions.',
     image: project17,
     gitHubLink: 'https://github.com/HusseinAshraf/quiz-app-SNS.git',
     liveDemoLink: 'https://husseinashraf.github.io/quiz-app-SNS/',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'REST APIs', 'Bootstrap'],
+    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'REST APIs'],
     filterId: ['JS / API'],
   },
   {
     name: 'Daily_Reminders',
-    description: 'A productivity web app that helps users set and manage daily reminders effectively.',
+    featured: false,
+    description: 'Daily quotes and reminders productivity app.',
     image: project10,
     gitHubLink: 'https://github.com/HusseinAshraf/Quotes-Quiz.git',
     liveDemoLink: 'https://husseinashraf.github.io/Quotes-Quiz/',
@@ -170,27 +183,28 @@ export const PROJECTS = [
   },
   {
     name: 'TICTAC_TOE',
-    description: 'A classic tic-tac-toe game implemented as a simple and interactive web application.',
+    featured: false,
+    description: 'Classic tic-tac-toe game with interactive JavaScript logic.',
     image: project13,
     gitHubLink: 'https://github.com/HusseinAshraf/TIC-TAC-TOE.git',
     liveDemoLink: 'https://husseinashraf.github.io/TIC-TAC-TOE/',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Bootstrap'],
+    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)'],
     filterId: ['JS / API'],
   },
   {
     name: 'Stop_Watch',
-    description: 'A lightweight web app that functions as a stopwatch for tracking time intervals.',
+    featured: false,
+    description: 'Lightweight stopwatch for tracking time intervals.',
     image: project14,
     gitHubLink: 'https://github.com/HusseinAshraf/stop-Watch.git',
     liveDemoLink: 'https://husseinashraf.github.io/stop-Watch/',
-    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Bootstrap'],
+    tech: ['HTML5', 'CSS3', 'JavaScript (ES6+)'],
     filterId: ['JS / API'],
   },
-
-  // Bootstrap
   {
     name: 'Daniels',
-    description: 'A modern and responsive website template designed for a fictional restaurant.',
+    featured: false,
+    description: 'Responsive Bootstrap restaurant website template.',
     image: project11,
     gitHubLink: 'https://github.com/HusseinAshraf/Daniels.git',
     liveDemoLink: 'https://husseinashraf.github.io/Daniels/',
@@ -199,18 +213,18 @@ export const PROJECTS = [
   },
   {
     name: 'DevFolio',
-    description: 'A clean and professional portfolio website template for showcasing developer projects and skills.',
+    featured: false,
+    description: 'Professional developer portfolio Bootstrap template.',
     image: project12,
     gitHubLink: 'https://github.com/HusseinAshraf/DevFolio.git',
     liveDemoLink: 'https://husseinashraf.github.io/DevFolio/',
     tech: ['HTML5', 'CSS3', 'Bootstrap'],
     filterId: ['Bootstrap'],
   },
-
-  // HTML / CSS
   {
     name: 'Meallify',
-    description: 'A responsive and visually appealing website template focused on food-related content.',
+    featured: false,
+    description: 'Responsive HTML/CSS food content website template.',
     image: project15,
     gitHubLink: 'https://github.com/HusseinAshraf/Mealify.git',
     liveDemoLink: 'https://husseinashraf.github.io/Mealify/',
@@ -219,7 +233,8 @@ export const PROJECTS = [
   },
   {
     name: 'Fokir',
-    description: 'A simple and elegant responsive portfolio template for personal or professional use.',
+    featured: false,
+    description: 'Elegant HTML/CSS personal portfolio template.',
     image: project16,
     gitHubLink: 'https://github.com/HusseinAshraf/Fokir.git',
     liveDemoLink: 'https://husseinashraf.github.io/Fokir/',
@@ -227,4 +242,3 @@ export const PROJECTS = [
     filterId: ['Html / Css'],
   },
 ];
-
