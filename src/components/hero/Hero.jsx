@@ -25,10 +25,10 @@ function Hero() {
   const { t } = useTranslation();
 
   const typingWords = [
-    'Angular 19 Developer',
-    'React.js Developer',
-    'ERP Systems Developer',
-    'Frontend Engineer',
+    t('hero.typing1'),
+    t('hero.typing2'),
+    t('hero.typing3'),
+    t('hero.typing4'),
   ];
 
   const typedText = useTypingEffect(typingWords, 75, 45, 2200);

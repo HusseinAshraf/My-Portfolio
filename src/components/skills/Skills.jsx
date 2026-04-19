@@ -79,7 +79,7 @@ function Skills() {
             className="inline-flex items-center gap-1.5 rounded-full mb-3"
             style={{ padding: '5px 14px', background: 'var(--accent-glow)', border: '1px solid rgba(109,106,255,0.2)', fontSize: 11, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)' }}
           >
-            Toolkit
+            {t('skills.toolkit')}
           </span>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text-primary)' }}>
             {t('skills.MySkills')}

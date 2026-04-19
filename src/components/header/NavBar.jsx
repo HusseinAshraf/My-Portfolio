@@ -188,7 +188,7 @@ function NavBar() {
             className="font-bold mb-4"
             style={{ fontFamily: 'var(--font-display)', fontSize: 28, color: 'var(--text-primary)', letterSpacing: '-0.03em' }}
           >
-            Menu
+            {t('menu.menu')}
           </div>
 
           {LINKS.map((link) => (

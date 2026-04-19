@@ -1,8 +1,10 @@
 import { RiGithubFill, RiExternalLinkLine } from '@remixicon/react';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 
 function ProjectCard({ item, index }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { t } = useTranslation();
 
   return (
     <div
@@ -58,7 +60,7 @@ function ProjectCard({ item, index }) {
               onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = '#fff'; }}
               onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
             >
-              <RiGithubFill size={12} /> Code
+              <RiGithubFill size={12} /> {t('projects.buttons.Code')}
             </a>
           )}
           {item.liveDemoLink && (
@@ -71,7 +73,7 @@ function ProjectCard({ item, index }) {
               onMouseEnter={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = '#fff'; }}
               onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-card)'; e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
             >
-              <RiExternalLinkLine size={12} /> Live
+              <RiExternalLinkLine size={12} /> {t('projects.buttons.Demo')}
             </a>
           )}
         </div>
@@ -81,7 +83,7 @@ function ProjectCard({ item, index }) {
             className="absolute top-2.5 left-2.5 rounded-full"
             style={{ padding: '3px 10px', background: 'var(--accent)', fontSize: 9, fontWeight: 700, color: '#fff', letterSpacing: '0.06em', textTransform: 'uppercase' }}
           >
-            Featured
+            {t('projects.badges.featured')}
           </div>
         )}
       </div>
@@ -89,10 +91,10 @@ function ProjectCard({ item, index }) {
       {/* Body */}
       <div className="flex flex-col gap-2.5 p-5 flex-1">
         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>
-          {item.name.replace(/_/g, ' ')}
+          {t(`projects.${item.key}.name`)}
         </h3>
         <p className="flex-1" style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-          {item.description}
+          {t(`projects.${item.key}.description`)}
         </p>
 
         {/* Tech tags */}

@@ -18,7 +18,7 @@ function About() {
     { key: 'graduationProject', Icon: RiLightbulbFlashFill },
   ];
 
-  const chips = ['Clean Code', 'Team Player', 'Fast Learner', 'Problem Solver'];
+  const chipKeys = ['about.chip1', 'about.chip2', 'about.chip3', 'about.chip4'];
 
   return (
     <section id="about" style={{ padding: '96px 0', position: 'relative' }}>
@@ -69,9 +69,9 @@ function About() {
 
             {/* Chips */}
             <div className="flex flex-wrap gap-2 mb-7">
-              {chips.map(chip => (
+              {chipKeys.map(chipKey => (
                 <span
-                  key={chip}
+                  key={chipKey}
                   className="rounded-full"
                   style={{
                     padding: '5px 14px',
@@ -82,7 +82,7 @@ function About() {
                     color: 'var(--accent)',
                   }}
                 >
-                  {chip}
+                  {t(chipKey)}
                 </span>
               ))}
             </div>

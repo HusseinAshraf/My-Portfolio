@@ -1,12 +1,13 @@
 {
   "logo": "Hussein. A",
-  "logoar":"H",
+  "logoar": "H",
   "menu": {
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact",
-    "experience": "Experience"
+    "experience": "Experience",
+    "menu": "Menu"
   },
   "toggleLightMode": "Toggle Light Mode",
   "hero": {
@@ -23,7 +24,11 @@
     "availableForWork": "Available for Work",
     "downloadCV": "Download CV",
     "enterpriseSystems": "Enterprise Systems",
-    "performanceBoost": "API Performance Boost"
+    "performanceBoost": "API Performance Boost",
+    "typing1": "Angular 19 Developer",
+    "typing2": "React.js Developer",
+    "typing3": "ERP Systems Developer",
+    "typing4": "Frontend Engineer"
   },
   "about": {
     "aboutMe": "About Me",
@@ -58,7 +63,11 @@
     "graduationProject": "Graduation Project: E-Commerce (Grade: Excellent)",
     "downloadCV": "Download CV",
     "label": "Get to Know Me",
-    "idealStudent": "Ideal Student Award — Beni Suef University (2022)"
+    "idealStudent": "Ideal Student Award — Beni Suef University (2022)",
+    "chip1": "Clean Code",
+    "chip2": "Team Player",
+    "chip3": "Fast Learner",
+    "chip4": "Problem Solver"
   },
   "skills": {
     "MySkills": "My Skills",
@@ -73,7 +82,8 @@
     "Typescript": "Typescript",
     "Material UI": "Material UI",
     "Git": "Git",
-    "Github": "Github"
+    "Github": "Github",
+    "toolkit": "Toolkit"
   },
   "Project": "Project",
   "projects": {
@@ -216,7 +226,44 @@
   "experience": {
     "label": "Career Path",
     "heading": "Work Experience",
-    "sub": "From training to enterprise-level Angular & React development"
+    "sub": "From training to enterprise-level Angular & React development",
+    "globalExperts": {
+      "role": "Frontend Developer — Full Time",
+      "company": "Global Experts",
+      "period": "Aug 2025 – Present",
+      "location": "Egypt, New Cairo",
+      "h1": "Built 5+ enterprise modules: E-Commerce (1,000+ products), POS, Inventory, E-Invoicing",
+      "h2": "Reduced API data-fetch latency by 30% via optimized REST integration",
+      "h3": "Designed scalable component architecture across all modules",
+      "h4": "Implemented Git branching strategy & collaborative code reviews"
+    },
+    "finestTouch": {
+      "role": "Frontend Developer — Intern",
+      "company": "Finest Touch KSA",
+      "period": "Jan 2025 – Apr 2025",
+      "location": "Egypt, Dokki",
+      "h1": "Delivered 3 production websites with dynamic Angular components",
+      "h2": "Reduced duplicated code by ~40% through reusable UI components",
+      "h3": "Built Al-Bait Al-Hijazi Restaurant landing page (mobile-first)",
+      "h4": "Built ArabiaExpo website with optimized UI interactions"
+    },
+    "freelance": {
+      "role": "Freelance Frontend Developer",
+      "company": "Self-Employed (Remote)",
+      "period": "2023 – Present",
+      "location": "Remote",
+      "h1": "Delivered full frontend solutions from concept to production for 3+ clients",
+      "h2": "Kamma — Pharmacy E-Commerce Platform (Angular + PrimeNG + Tailwind)",
+      "h3": "AL-Amen Marketing Landing Page (React, production deployed)"
+    },
+    "routeIT": {
+      "role": "Frontend Development Diploma",
+      "company": "Route IT Training Center",
+      "period": "Oct 2022 – Feb 2023",
+      "location": "Egypt",
+      "h1": "Intensive frontend diploma covering modern web technologies",
+      "h2": "Built 10+ projects across HTML/CSS, JavaScript, and React"
+    }
   },
   "contact": {
     "label": "Say Hello",
@@ -224,6 +271,8 @@
     "errorText": "Please fill all fields before sending.",
     "successTitle": "Sent!",
     "successText": "Message sent successfully.",
-    "sendFailed": "Failed to send"
+    "sendFailed": "Failed to send",
+    "availableText": "Available for new projects and collaborations. Let's build something great.",
+    "sending": "Sending…"
   }
 }

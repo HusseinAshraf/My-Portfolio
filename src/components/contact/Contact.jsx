@@ -146,7 +146,7 @@ function Contact() {
                 {t('GetInTouch')}
               </p>
               <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                Available for new projects and collaborations. Let's build something great.
+                {t('contact.availableText')}
               </p>
             </div>
 
@@ -270,7 +270,7 @@ function Contact() {
                   onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; }}
                 >
                   {sending
-                    ? <><RiLoader4Line size={17} className="spin-icon" /> Sending…</>
+                    ? <><RiLoader4Line size={17} className="spin-icon" /> {t('contact.sending')}</>
                     : <><RiSendPlaneFill size={17} /> {t('SendMessage')}</>
                   }
                 </button>

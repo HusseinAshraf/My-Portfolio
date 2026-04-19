@@ -5,14 +5,14 @@ import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 
 const FILTER_OPTIONS = [
-  { value: 'ALL',         icon: '✦',  label: 'All' },
-  { value: 'React',       icon: '⚛',  label: 'React' },
-  { value: 'Angular',     icon: '🅰',  label: 'Angular' },
-  { value: 'JS / API',    icon: '⚡', label: 'JS / API' },
-  { value: 'Bootstrap',   icon: '🎨', label: 'Bootstrap' },
-  { value: 'Material UI', icon: '📦', label: 'Material UI' },
-  { value: 'Tailwind',    icon: '💨', label: 'Tailwind' },
-  { value: 'Html / Css',  icon: '🌐', label: 'HTML/CSS' },
+  { value: 'ALL',         icon: '✦',  labelKey: 'projects.filters.all' },
+  { value: 'React',       icon: '⚛',  labelKey: 'projects.filters.react' },
+  { value: 'Angular',     icon: '🅰',  labelKey: 'projects.filters.angular' },
+  { value: 'JS / API',    icon: '⚡', labelKey: 'projects.filters.js' },
+  { value: 'Bootstrap',   icon: '🎨', labelKey: 'projects.filters.bootstrap' },
+  { value: 'Material UI', icon: '📦', labelKey: 'projects.filters.material' },
+  { value: 'Tailwind',    icon: '💨', labelKey: 'projects.filters.tailwind' },
+  { value: 'Html / Css',  icon: '🌐', labelKey: 'projects.filters.htmlCss' },
 ];
 
 function Projects() {
@@ -75,7 +75,7 @@ function Projects() {
               }}
             >
               <span>{opt.icon}</span>
-              {opt.label}
+              {t(opt.labelKey)}
               {filter === opt.value && (
                 <span
                   className="rounded-full ml-0.5"
@@ -92,7 +92,7 @@ function Projects() {
         {filtered.length > 0 ? (
           <div className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
             {filtered.map((item, i) => (
-              <ProjectCard key={item.name} item={item} index={i} />
+              <ProjectCard key={item.key} item={item} index={i} />
             ))}
           </div>
         ) : (

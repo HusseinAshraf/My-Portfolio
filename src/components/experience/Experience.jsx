@@ -8,77 +8,78 @@ import { useTranslation } from 'react-i18next';
 const experiences = [
   {
     key: 'globalExperts',
-    role: 'Frontend Developer — Full Time',
-    company: 'Global Experts',
-    period: 'Aug 2025 – Present',
-    location: 'Egypt, New Cairo',
+    roleKey: 'experience.globalExperts.role',
+    companyKey: 'experience.globalExperts.company',
+    periodKey: 'experience.globalExperts.period',
+    locationKey: 'experience.globalExperts.location',
     isCurrent: true,
     dotColor: '#6d6aff',
     dotBg: 'rgba(109,106,255,0.15)',
     Icon: RiBriefcaseFill,
     tech: ['Angular 19', 'TypeScript', 'PrimeNG', 'Tailwind CSS'],
-    highlights: [
-      'Built 5+ enterprise modules: E-Commerce (1,000+ products), POS, Inventory, E-Invoicing',
-      'Reduced API data-fetch latency by 30% via optimized REST integration',
-      'Designed scalable component architecture across all modules',
-      'Implemented Git branching strategy & collaborative code reviews',
+    highlightKeys: [
+      'experience.globalExperts.h1',
+      'experience.globalExperts.h2',
+      'experience.globalExperts.h3',
+      'experience.globalExperts.h4',
     ],
   },
   {
     key: 'finestTouch',
-    role: 'Frontend Developer — Intern',
-    company: 'Finest Touch KSA',
-    period: 'Jan 2025 – Apr 2025',
-    location: 'Egypt, Dokki',
+    roleKey: 'experience.finestTouch.role',
+    companyKey: 'experience.finestTouch.company',
+    periodKey: 'experience.finestTouch.period',
+    locationKey: 'experience.finestTouch.location',
     isCurrent: false,
     dotColor: '#4ecdc4',
     dotBg: 'rgba(78,205,196,0.15)',
     Icon: RiRocketFill,
     tech: ['Angular', 'REST APIs', 'Bootstrap', 'Responsive Design'],
-    highlights: [
-      'Delivered 3 production websites with dynamic Angular components',
-      'Reduced duplicated code by ~40% through reusable UI components',
-      'Built Al-Bait Al-Hijazi Restaurant landing page (mobile-first)',
-      'Built ArabiaExpo website with optimized UI interactions',
+    highlightKeys: [
+      'experience.finestTouch.h1',
+      'experience.finestTouch.h2',
+      'experience.finestTouch.h3',
+      'experience.finestTouch.h4',
     ],
   },
   {
     key: 'freelance',
-    role: 'Freelance Frontend Developer',
-    company: 'Self-Employed (Remote)',
-    period: '2023 – Present',
-    location: 'Remote',
+    roleKey: 'experience.freelance.role',
+    companyKey: 'experience.freelance.company',
+    periodKey: 'experience.freelance.period',
+    locationKey: 'experience.freelance.location',
     isCurrent: true,
     dotColor: '#a78bfa',
     dotBg: 'rgba(167,139,250,0.15)',
     Icon: RiCodeBoxFill,
     tech: ['Angular', 'React', 'JavaScript', 'REST APIs'],
-    highlights: [
-      'Delivered full frontend solutions from concept to production for 3+ clients',
-      'Kamma — Pharmacy E-Commerce Platform (Angular + PrimeNG + Tailwind)',
-      'AL-Amen Marketing Landing Page (React, production deployed)',
+    highlightKeys: [
+      'experience.freelance.h1',
+      'experience.freelance.h2',
+      'experience.freelance.h3',
     ],
   },
   {
     key: 'routeIT',
-    role: 'Frontend Development Diploma',
-    company: 'Route IT Training Center',
-    period: 'Oct 2022 – Feb 2023',
-    location: 'Egypt',
+    roleKey: 'experience.routeIT.role',
+    companyKey: 'experience.routeIT.company',
+    periodKey: 'experience.routeIT.period',
+    locationKey: 'experience.routeIT.location',
     isCurrent: false,
     dotColor: '#f59e0b',
     dotBg: 'rgba(245,158,11,0.15)',
     Icon: RiGraduationCapFill,
     tech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'React basics'],
-    highlights: [
-      'Intensive frontend diploma covering modern web technologies',
-      'Built 10+ projects across HTML/CSS, JavaScript, and React',
+    highlightKeys: [
+      'experience.routeIT.h1',
+      'experience.routeIT.h2',
     ],
   },
 ];
 
 function ExperienceCard({ exp, index }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.12 });
+  const { t } = useTranslation();
 
   return (
     <div
@@ -130,7 +131,7 @@ function ExperienceCard({ exp, index }) {
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-1">
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 700, color: 'var(--text-primary)' }}>
-                {exp.role}
+                {t(exp.roleKey)}
               </h3>
               {exp.isCurrent && (
                 <span
@@ -138,31 +139,31 @@ function ExperienceCard({ exp, index }) {
                   style={{ padding: '3px 10px', background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)', fontSize: 11, fontWeight: 600, color: '#22c55e' }}
                 >
                   <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#22c55e', animation: 'pulseGlow 2s ease-in-out infinite' }} />
-                  Active
+                  {t('about.active')}
                 </span>
               )}
             </div>
             <div className="flex items-center gap-1.5" style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
               <RiBuildingFill size={13} />
-              {exp.company}
+              {t(exp.companyKey)}
             </div>
           </div>
           <div className="flex flex-wrap gap-3">
             <span className="flex items-center gap-1.5" style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-              <RiCalendarFill size={12} />{exp.period}
+              <RiCalendarFill size={12} />{t(exp.periodKey)}
             </span>
             <span className="flex items-center gap-1.5" style={{ fontSize: 12, color: 'var(--text-muted)' }}>
-              <RiMapPinFill size={12} />{exp.location}
+              <RiMapPinFill size={12} />{t(exp.locationKey)}
             </span>
           </div>
         </div>
 
         {/* Highlights */}
         <ul className="mb-4 flex flex-col gap-2" style={{ padding: 0, listStyle: 'none' }}>
-          {exp.highlights.map((item, i) => (
+          {exp.highlightKeys.map((key, i) => (
             <li key={i} className="flex items-start gap-2" style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.55 }}>
               <RiCheckboxCircleFill size={14} style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 2 }} />
-              {item}
+              {t(key)}
             </li>
           ))}
         </ul>
