@@ -1,92 +1,115 @@
 import { PROJECTS } from '../../assets/constants';
 import ProjectCard from './ProjectCard';
-import SectionHeading from '../ui/SectionHeading';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RiCheckLine } from '@remixicon/react';
+import { useInView } from 'react-intersection-observer';
+
+const FILTER_OPTIONS = [
+  { value: 'ALL',         icon: '✦',  label: 'All' },
+  { value: 'React',       icon: '⚛',  label: 'React' },
+  { value: 'Angular',     icon: '🅰',  label: 'Angular' },
+  { value: 'JS / API',    icon: '⚡', label: 'JS / API' },
+  { value: 'Bootstrap',   icon: '🎨', label: 'Bootstrap' },
+  { value: 'Material UI', icon: '📦', label: 'Material UI' },
+  { value: 'Tailwind',    icon: '💨', label: 'Tailwind' },
+  { value: 'Html / Css',  icon: '🌐', label: 'HTML/CSS' },
+];
 
 function Projects() {
   const { t } = useTranslation();
   const [filter, setFilter] = useState('ALL');
+  const { ref: titleRef, inView: titleInView } = useInView({ triggerOnce: true, threshold: 0.4 });
 
-  const filterOptions = [
-    { value: 'ALL', icon: '🎯', label: t('projects.filters.all') },
-    { value: 'React', icon: '⚛️', label: t('projects.filters.react') },
-    { value: 'Angular', icon: '🅰️', label: t('projects.filters.angular') },
-    { value: 'JS / API', icon: '🔥', label: t('projects.filters.js') },
-    { value: 'Bootstrap', icon: '🎨', label: t('projects.filters.bootstrap') },
-    { value: 'Material UI', icon: '📦', label: t('projects.filters.material') },
-    { value: 'Tailwind', icon: '💨', label: t('projects.filters.tailwind') },
-    { value: 'Html / Css', icon: '🌐', label: t('projects.filters.htmlCss') },
-  ];
-
-  const filteredProjects =
-    filter === 'ALL'
-      ? PROJECTS
-      : PROJECTS.filter((project) => project.filterId.includes(filter));
+  const filtered = filter === 'ALL'
+    ? PROJECTS
+    : PROJECTS.filter(p => p.filterId.includes(filter));
 
   return (
-    <section
-      className="projects-section mx-7 overflow-hidden px-6 py-12 flex flex-col"
-      id="projects"
-    >
-      <SectionHeading>{t('projects.title')}</SectionHeading>
+    <section id="projects" style={{ padding: '96px 0' }}>
+      <div className="mx-auto px-4 sm:px-6 lg:px-8" style={{ maxWidth: 1152 }}>
 
-      {/* Filter Section */}
-      <div className="mt-8 mb-12">
-        <div className="flex flex-wrap justify-center gap-3">
-          {filterOptions.map((option) => (
+        {/* Heading */}
+        <div
+          ref={titleRef}
+          className="mb-10"
+          style={{ opacity: titleInView ? 1 : 0, transform: titleInView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}
+        >
+          <span
+            className="inline-flex items-center gap-1.5 rounded-full mb-3"
+            style={{ padding: '5px 14px', background: 'var(--accent-glow)', border: '1px solid rgba(109,106,255,0.2)', fontSize: 11, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)' }}
+          >
+            {t('projects.title')}
+          </span>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text-primary)' }}>
+            {t('projects.title')}
+          </h2>
+        </div>
+
+        {/* Filter bar */}
+        <div className="flex flex-wrap gap-2 mb-10">
+          {FILTER_OPTIONS.map(opt => (
             <button
-              key={option.value}
-              onClick={() => setFilter(option.value)}
-              className={`group relative px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-105 flex items-center gap-2 ${
-                filter === option.value
-                  ? 'text-white shadow-lg shadow-purple-500/50'
-                  : 'bg-slate-800/80 text-gray-300 hover:text-white border border-purple-500/20 hover:border-purple-500/40'
-              }`}
+              key={opt.value}
+              onClick={() => setFilter(opt.value)}
+              className="inline-flex items-center gap-1.5 rounded-xl font-medium transition-all duration-200 cursor-pointer"
+              style={{
+                padding: '8px 16px',
+                fontSize: 13,
+                background: filter === opt.value ? 'var(--accent)' : 'var(--bg-card)',
+                color: filter === opt.value ? '#fff' : 'var(--text-secondary)',
+                border: `1px solid ${filter === opt.value ? 'var(--accent)' : 'var(--border)'}`,
+                boxShadow: filter === opt.value ? '0 4px 16px var(--accent-glow-strong)' : 'none',
+                outline: 'none',
+              }}
+              onMouseEnter={e => {
+                if (filter !== opt.value) {
+                  e.currentTarget.style.color = 'var(--text-primary)';
+                  e.currentTarget.style.borderColor = 'var(--border-hover)';
+                }
+              }}
+              onMouseLeave={e => {
+                if (filter !== opt.value) {
+                  e.currentTarget.style.color = 'var(--text-secondary)';
+                  e.currentTarget.style.borderColor = 'var(--border)';
+                }
+              }}
             >
-              {filter === option.value && (
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-xl"></div>
-              )}
-
-              <span className="relative z-10 flex items-center gap-2">
-                <span className="text-base">{option.icon}</span>
-                {option.label}
-                {filter === option.value && (
-                  <RiCheckLine size={18} className="animate-pulse" />
-                )}
-              </span>
-
-              {filter !== option.value && (
-                <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition duration-300"></div>
+              <span>{opt.icon}</span>
+              {opt.label}
+              {filter === opt.value && (
+                <span
+                  className="rounded-full ml-0.5"
+                  style={{ padding: '1px 6px', background: 'rgba(255,255,255,0.25)', fontSize: 10, fontWeight: 700 }}
+                >
+                  {filtered.length}
+                </span>
               )}
             </button>
           ))}
         </div>
-      </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.map((item, index) => (
-          <ProjectCard item={item} key={index} index={index} />
-        ))}
-      </div>
+        {/* Grid */}
+        {filtered.length > 0 ? (
+          <div className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
+            {filtered.map((item, i) => (
+              <ProjectCard key={item.name} item={item} index={i} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-20">
+            <div style={{ fontSize: 48, marginBottom: 16 }}>🔍</div>
+            <p style={{ fontSize: 16, color: 'var(--text-secondary)' }}>{t('projects.empty')}</p>
+            <button
+              onClick={() => setFilter('ALL')}
+              className="mt-4 rounded-xl font-semibold transition-all duration-200"
+              style={{ padding: '10px 22px', background: 'var(--accent)', color: '#fff', border: 'none', fontSize: 13, cursor: 'pointer' }}
+            >
+              {t('projects.showAll')}
+            </button>
+          </div>
+        )}
 
-      {/* Empty State */}
-      {filteredProjects.length === 0 && (
-        <div className="text-center py-16">
-          <div className="text-6xl mb-4">🔍</div>
-          <p className="text-xl text-gray-400">
-            {t('projects.empty')}
-          </p>
-          <button
-            onClick={() => setFilter('ALL')}
-            className="mt-4 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
-          >
-            {t('projects.showAll')}
-          </button>
-        </div>
-      )}
+      </div>
     </section>
   );
 }

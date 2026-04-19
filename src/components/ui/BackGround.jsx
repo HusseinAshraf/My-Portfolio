@@ -1,55 +1,54 @@
-import React, { useEffect, useRef } from "react";
-
-const circleAnimations = [
-  {
-    keyframes: { transform: ["scale(1)", "scale(1.2)", "scale(1)"], translate: ["translate(0px, 0px)", "translate(150px, 70px)", "translate(0px, 0px)"] },
-    duration: 4000,
-  },
-  {
-    keyframes: { transform: ["scale(1)", "scale(1.3)", "scale(1)"], translate: ["translate(0px, 0px)", "translate(-120px, 100px)", "translate(0px, 0px)"] },
-    duration: 5000,
-  },
-  {
-    keyframes: { transform: ["scale(1)", "scale(1.4)", "scale(1)"], translate: ["translate(0px, 0px)", "translate(200px, -90px)", "translate(0px, 0px)"] },
-    duration: 6000,
-  },
-];
+import React from 'react';
 
 function BackGround() {
-  const circles = [useRef(null), useRef(null), useRef(null)];
-
-  useEffect(() => {
-    circles.forEach((circle, index) => {
-      const animation = circleAnimations[index];
-      circle.current.animate(
-        [
-          { transform: `${animation.keyframes.translate[0]} ${animation.keyframes.transform[0]}` },
-          { transform: `${animation.keyframes.translate[1]} ${animation.keyframes.transform[1]}` },
-          { transform: `${animation.keyframes.translate[2]} ${animation.keyframes.transform[2]}` },
-        ],
-        {
-          duration: animation.duration,
-          iterations: Infinity,
-          easing: "ease-in-out",
-        }
-      );
-    });
-  }, []);
-
   return (
-    <div className="pointer-events-none fixed left-0 top-0 z-10 flex h-full w-full items-center justify-center overflow-hidden opacity-60 blur-[100px] filter">
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+      {/* Dot grid */}
       <div
-        ref={circles[0]}
-        className="absolute h-[280px] w-[380px] rounded-full bg-gradient-to-r from-[#7309E2] to-[#4C00D4]"
-      ></div>
+        className="absolute inset-0 opacity-100"
+        style={{
+          backgroundImage: 'radial-gradient(circle, var(--grid-color) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      {/* Ambient orbs */}
       <div
-        ref={circles[1]}
-        className="absolute h-[300px] w-[400px] rounded-full bg-gradient-to-r from-[#2D4B88] to-[#7309E2]"
-      ></div>
+        className="absolute rounded-full"
+        style={{
+          width: 600,
+          height: 600,
+          background: 'radial-gradient(circle, var(--accent), transparent 70%)',
+          filter: 'blur(120px)',
+          opacity: 0.07,
+          top: '-150px',
+          right: '-100px',
+        }}
+      />
       <div
-        ref={circles[2]}
-        className="absolute h-[320px] w-[420px] rounded-full bg-gradient-to-r from-[#3D92C1] to-[#7309E2]"
-      ></div>
+        className="absolute rounded-full"
+        style={{
+          width: 500,
+          height: 500,
+          background: 'radial-gradient(circle, var(--accent2), transparent 70%)',
+          filter: 'blur(120px)',
+          opacity: 0.05,
+          bottom: '10%',
+          left: '-100px',
+        }}
+      />
+      <div
+        className="absolute rounded-full"
+        style={{
+          width: 400,
+          height: 400,
+          background: 'radial-gradient(circle, var(--accent), transparent 70%)',
+          filter: 'blur(100px)',
+          opacity: 0.04,
+          top: '50%',
+          left: '40%',
+        }}
+      />
     </div>
   );
 }

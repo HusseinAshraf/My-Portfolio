@@ -8,37 +8,28 @@ function LIghtModeBtn() {
     'islight',
   );
 
-  useEffect(
-    function () {
-      if (islight) {
-        document.body.classList.add('light');
-        document.body.classList.remove('dark');
-      } else {
-        document.body.classList.add('dark');
-        document.body.classList.remove('light');
-      }
-    },
-    [islight],
-  );
-
-  const handleDarkMode = () => {
-    setIsLight((islight) => !islight);
-  };
+  useEffect(() => {
+    if (islight) {
+      document.body.classList.add('light');
+      document.body.classList.remove('dark');
+    } else {
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
+    }
+  }, [islight]);
 
   return (
-    <div>
-      <button onClick={() => handleDarkMode()} className="cursor-pointer">
-        {' '}
-        {islight ? (
-          <RiMoonFill aria-label="dark mode button" className="text-black" />
-        ) : (
-          <RiSunFill
-            aria-label="light mode button"
-            className="text-[#f14907]"
-          />
-        )}
-      </button>
-    </div>
+    <button
+      onClick={() => setIsLight(v => !v)}
+      className="w-[34px] h-[34px] rounded-xl flex items-center justify-center transition-all duration-200 hover:bg-[var(--accent-glow)] border border-transparent hover:border-[var(--border-hover)]"
+      style={{ color: 'var(--text-secondary)' }}
+      aria-label="Toggle color mode"
+    >
+      {islight
+        ? <RiMoonFill size={16} />
+        : <RiSunFill size={16} style={{ color: 'var(--accent)' }} />
+      }
+    </button>
   );
 }
 
